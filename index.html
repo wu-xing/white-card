@@ -83,7 +83,17 @@
             <div class="avator">
               <img alt="" src="/static/image/avator.png"/>
             </div>
-            
+
+            <ul>
+              
+              <% categorys.forEach(function(category, i){ %>
+              <li>
+                <a href="<%= category.indexUrl %>"><%= category.name %></a>
+              </li>
+                <% }); %>     
+              
+              
+            </ul>
             
           </div>
         

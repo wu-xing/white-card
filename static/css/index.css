@@ -195,7 +195,7 @@ nav {
   border-radius: 0.1rem;
   box-sizing: border-box;
   background-color: #8e3c32;
-  border: 5px solid #a33e24; }
+  border: 5px solid #662a24; }
 
 .article-wrapper {
   position: absolute;
@@ -288,11 +288,20 @@ nav {
   display: inline-block;
   float: left; }
   .slide .avator {
+    margin-top: 3rem;
     box-sizing: border-box; }
     .slide .avator img {
       width: 80%;
       display: block;
       margin: 0 auto; }
+  .slide li {
+    margin-top: 5px;
+    display: block; }
+    .slide li a {
+      display: inline-block;
+      background-color: white; }
+      .slide li a:after {
+        content: ''; }
 
 footer {
   position: absolute;

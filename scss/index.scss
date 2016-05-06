@@ -133,7 +133,7 @@ $main-bg: #8e3c32;
     background: {
         color: $main-bg;
     }
-    border: 5px solid #a33e24;
+    border: 5px solid #662a24;
 }
 
 .article-wrapper {
@@ -257,13 +257,29 @@ $main-bg: #8e3c32;
     float: left;
 
     .avator {
-        
+        margin-top: 3rem;
         box-sizing: border-box;
 
         img {
             width: 80%;
             display: block;
             margin: 0 auto;
+        }
+    }
+
+    li {
+        margin-top: 5px;
+        display: block;
+        
+
+        a {
+            display: inline-block;
+            background-color: white;
+
+            &:after {
+                content: '';
+                
+            }
         }
     }
 }

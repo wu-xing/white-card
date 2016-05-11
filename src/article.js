@@ -2,7 +2,7 @@
 
 let $ = require('jquery');
 
-require('./radiation-header.js');
+//require('./radiation-header.js');
 
 var addPicLine = () => {
     $('.article img').wrap('<div class="img-wrapper">');

@@ -25,7 +25,7 @@ html, body {
     font-family: YueSong;
     src: url('/static/font/yuesong.TTF');
 }
-3
+
 
 header {
     position: absolute;
@@ -122,7 +122,7 @@ nav {
 $main-bg: #8e3c32;
 
 .main-wrapper {
-    
+    overflow: scroll;
     height: 100%;
     z-index: 20;
     position: relative;

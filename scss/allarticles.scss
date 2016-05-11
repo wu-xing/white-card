@@ -1,0 +1,132 @@
+
+
+$main-bg: #8e3c32;
+
+@import "./common.scss";
+@import "./minix.scss";
+@import "./slide-tag.scss";
+
+html, body {
+    height: 100%;
+}
+
+body {
+    @include clearfix;
+}
+
+.slide-tag {
+    left: 10%;
+}
+
+.main {
+    
+    z-index: 20;
+    position: relative;
+    top: 0;
+    margin: 2rem auto;
+    width: 80%;
+    border-radius: 0.1rem;
+    box-sizing: border-box;
+    background: {
+        color: $main-bg;
+    }
+    border: 1rem solid #662a24;
+    color: white;
+
+    padding: 1rem;
+}
+
+.article-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: 0.4rem;
+        margin-bottom: 0.8rem;
+        box-shadow: 0 0 4px #eee;
+    }
+}
+
+footer {
+
+    padding: 0 1rem;
+    img {
+        display: block;
+        margin: auto;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    p {
+        display: inline-block;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: inline-block;
+        float: right;
+        position: relative;
+        vertical-align: middle;
+        li {
+            float: left;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+
+        a {
+            display: inline-block;
+            height: 100%;
+        }
+
+        svg {
+            width: 1.4rem;
+        }
+        
+    }
+
+    .footer-text {
+        margin-top: 0.7rem;
+        height: 2rem;
+        p {
+            margin-top: 4px;
+        }
+    }
+}
+
+
+$paging-number-size: 30px;
+$paging-number-bg: #eee;
+$paging-number-active-bg: #ee5b33;
+
+.paging {
+    @include clearfix;
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 5px auto 15px;
+    text-align: center;
+    
+    &--number {
+        display: inline-block;
+        text-align: center;
+        height: $paging-number-size;
+        width: $paging-number-size;
+        line-height: $paging-number-size;
+        border-radius: 3px;
+        box-shadow: 0px 2px 14px #555;
+        background: {
+            color: $paging-number-bg;
+        }
+        a {
+            font-weight: 700;
+            color: black;
+        }
+        
+        &.active {
+            box-shadow: inset 0px 0px 7px #555;
+        }
+    }
+}

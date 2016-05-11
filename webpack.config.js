@@ -11,7 +11,7 @@ var config = {
         index: './src/index.js',
         category: './src/category',
         article: './src/article',
-        allarticles: './src/article'
+        allarticles: './src/allarticles'
     },
     output: {
         path: __dirname + '/static/js',

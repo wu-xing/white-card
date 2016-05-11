@@ -10,7 +10,8 @@ var config = {
     entry: {
         index: './src/index.js',
         category: './src/category',
-        article: './src/article'
+        article: './src/article',
+        allarticles: './src/article'
     },
     output: {
         path: __dirname + '/static/js',

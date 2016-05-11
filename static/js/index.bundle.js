@@ -48,7 +48,7 @@
 
 	//require('./radiation-header.js');
 
-	var $ = __webpack_require__(1);
+	let $ = __webpack_require__(1);
 
 	__webpack_require__(3);
 
@@ -66,16 +66,16 @@
 	    };
 	}();
 
-	var clicked = false;
+	let clicked = false;
 	$('.article-wrapper').on('click', function () {
-	    var e = $(this);
+	    let e = $(this);
 	    if (clicked) {
 	        clicked = false;
 
 	        e.css('top', e.data('top')).css('overflow', 'hidden').css('z-index', 'auto').addClass('c').removeClass('active');
 
 	        $('.article-wrapper').map(function () {
-	            var ee = $(this);
+	            let ee = $(this);
 	            ee.css('top', ee.data('top'));
 	            //ee.find('.article').css('overflow', 'hidden');
 	            ee[0].scrollTop = 0;
@@ -96,7 +96,7 @@
 
 	            setTimeout(function () {
 	                $('.article-wrapper').map(function () {
-	                    var ee = $(this);
+	                    let ee = $(this);
 	                    if (ee[0] !== e[0]) {
 	                        ee.addClass('blur');
 	                    }
@@ -11135,7 +11135,7 @@
 	'use strict';
 
 	window.addEventListener('load', function () {
-	    var canvas = document.getElementById('article-canvas'),
+	    let canvas = document.getElementById('article-canvas'),
 	        ctx = canvas.getContext('2d');
 
 	    ctx.lineWidth = 0.5;
@@ -11144,22 +11144,20 @@
 	    canvas.height = canvas.parentElement.offsetHeight;
 	    canvas.width = canvas.parentElement.offsetWidth;
 
-	    var count = 75,
+	    let count = 75,
 	        rotation = 270 * (Math.PI / 180),
 	        speed = 6;
 
-	    var bigCardHeight = document.querySelector('.articles').offsetHeight,
+	    let bigCardHeight = document.querySelector('.articles').offsetHeight,
 	        lastOffsetTop = canvas.parentElement.parentElement.offsetTop;
 
-	    var centerX = canvas.width / 2;
-	    var centerY = canvas.height / 2;
+	    let [centerX, centerY] = [canvas.width / 2, canvas.height / 2];
 
-
-	    var updateLoader = function updateLoader() {
+	    let updateLoader = function () {
 	        rotation += speed / 100;
 	    };
 
-	    var renderLoader = function renderLoader() {
+	    let renderLoader = function () {
 	        ctx.save();
 	        ctx.globalCompositeOperation = 'source-over';
 	        ctx.translate(centerX, centerY);
@@ -11173,7 +11171,7 @@
 	        ctx.restore();
 	    };
 
-	    var canvasLoop = function canvasLoop() {
+	    let canvasLoop = function () {
 	        requestAnimationFrame(canvasLoop, canvas);
 	        ctx.globalCompositeOperation = 'destination-out';
 	        ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';

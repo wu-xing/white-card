@@ -114,7 +114,15 @@ h1, h2, h3, h4, h5, h6 {
 .main {
   position: relative;
   max-width: 1420px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 75%;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1.5rem 1rem 2rem;
+  border-radius: 3px;
+  margin: 50px auto 4rem;
+  box-shadow: 0px 0px 60px #bebebe;
+  z-index: 10; }
   .main:before, .main:after {
     content: " ";
     display: table; }
@@ -122,15 +130,7 @@ h1, h2, h3, h4, h5, h6 {
     clear: both; }
 
 .article {
-  position: relative;
-  z-index: 10;
-  width: 75%;
-  background-color: white;
-  box-sizing: border-box;
-  padding: 1.5rem 1rem 2rem;
-  border-radius: 3px;
-  margin: 50px auto 4rem;
-  box-shadow: 0px 0px 60px #bebebe; }
+  position: relative; }
   .article .img-wrapper {
     position: relative;
     z-index: 1; }

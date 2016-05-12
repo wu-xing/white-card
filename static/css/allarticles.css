@@ -114,6 +114,65 @@ html, body, div {
       -webkit-animation-delay: 3000ms;
               animation-delay: 3000ms; }
 
+.paging {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 5px auto 15px;
+  text-align: center; }
+  .paging:before, .paging:after {
+    content: " ";
+    display: table; }
+  .paging:after {
+    clear: both; }
+  .paging--number {
+    display: inline-block;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 14px #555;
+    background-color: #eee; }
+    .paging--number a {
+      font-weight: 700;
+      color: black; }
+    .paging--number.active {
+      box-shadow: inset 0px 0px 7px #555; }
+
+/* org */
+footer {
+  padding: 0 1rem; }
+  footer img {
+    display: block;
+    margin: auto;
+    height: 100px;
+    border-radius: 50%; }
+  footer p {
+    display: inline-block; }
+  footer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+    float: right;
+    position: relative;
+    vertical-align: middle; }
+    footer ul li {
+      float: left;
+      display: inline-block;
+      margin-left: 0.5rem; }
+    footer ul a {
+      display: inline-block;
+      height: 100%; }
+    footer ul svg {
+      width: 1.4rem; }
+  footer .footer-text {
+    margin-top: 0.7rem;
+    height: 2rem; }
+    footer .footer-text p {
+      margin-top: 4px; }
+
 html, body {
   height: 100%; }
 
@@ -148,61 +207,3 @@ body:after {
     padding: 0.4rem;
     margin-bottom: 0.8rem;
     box-shadow: 0 0 4px #eee; }
-
-footer {
-  padding: 0 1rem; }
-  footer img {
-    display: block;
-    margin: auto;
-    height: 100px;
-    border-radius: 50%; }
-  footer p {
-    display: inline-block; }
-  footer ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: inline-block;
-    float: right;
-    position: relative;
-    vertical-align: middle; }
-    footer ul li {
-      float: left;
-      display: inline-block;
-      margin-left: 0.5rem; }
-    footer ul a {
-      display: inline-block;
-      height: 100%; }
-    footer ul svg {
-      width: 1.4rem; }
-  footer .footer-text {
-    margin-top: 0.7rem;
-    height: 2rem; }
-    footer .footer-text p {
-      margin-top: 4px; }
-
-.paging {
-  list-style: none;
-  position: relative;
-  padding: 0;
-  margin: 5px auto 15px;
-  text-align: center; }
-  .paging:before, .paging:after {
-    content: " ";
-    display: table; }
-  .paging:after {
-    clear: both; }
-  .paging--number {
-    display: inline-block;
-    text-align: center;
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    border-radius: 3px;
-    box-shadow: 0px 2px 14px #555;
-    background-color: #eee; }
-    .paging--number a {
-      font-weight: 700;
-      color: black; }
-    .paging--number.active {
-      box-shadow: inset 0px 0px 7px #555; }

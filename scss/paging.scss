@@ -1,0 +1,36 @@
+
+@import "./minix.scss";
+
+$paging-number-size: 30px;
+$paging-number-bg: #eee;
+$paging-number-active-bg: #ee5b33;
+
+.paging {
+    @include clearfix;
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 5px auto 15px;
+    text-align: center;
+    
+    &--number {
+        display: inline-block;
+        text-align: center;
+        height: $paging-number-size;
+        width: $paging-number-size;
+        line-height: $paging-number-size;
+        border-radius: 3px;
+        box-shadow: 0px 2px 14px #555;
+        background: {
+            color: $paging-number-bg;
+        }
+        a {
+            font-weight: 700;
+            color: black;
+        }
+        
+        &.active {
+            box-shadow: inset 0px 0px 7px #555;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+
+.footer-avator {
+    img {
+        display: block;
+        margin: 1.5rem auto;
+        width: 10rem;
+    }
+
+    &--author, &--author-desc {
+        text-align: center;
+    }
+}
+
+

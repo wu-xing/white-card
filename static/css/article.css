@@ -48,11 +48,6 @@ html, body, div {
   padding: 0;
   margin: 0; }
 
-#disqus_thread {
-  padding: 32px 20px;
-  border-radius: 3px;
-  background-color: rgba(236, 223, 191, 0.1); }
-
 /* org */
 footer {
   padding: 0 1rem; }
@@ -86,12 +81,25 @@ footer {
     footer .footer-text p {
       margin-top: 4px; }
 
+.footer-avator img {
+  display: block;
+  margin: 1.5rem auto;
+  width: 10rem; }
+
+.footer-avator--author, .footer-avator--author-desc {
+  text-align: center; }
+
 code {
-  opacity: 0.8;
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms; }
+  margin: 0.2rem 1rem;
+  padding: 0.2rem 0.5rem;
+  opacity: 0.9;
+  -webkit-transition: opacity 500ms ease-in-out, box-shadow 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, box-shadow 500ms ease-in-out;
+  box-shadow: 0 0 5px #aaa;
+  border-radius: 3px; }
   code:hover {
-    opacity: 1; }
+    opacity: 1;
+    box-shadow: 0 0 15px #aaa; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold; }

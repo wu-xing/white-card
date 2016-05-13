@@ -2,10 +2,10 @@
 
 $main-bg: #8e3c32;
 
-@import "./common.scss";
-@import "./minix.scss";
-@import "./slide-tag.scss";
-@import "./paging.scss";
+@import "./_common";
+@import "./_minix";
+@import "./widget/slide-tag";
+@import "./widget/paging.scss";
 @import "./widget/footer.scss";
 
 html, body {

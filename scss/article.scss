@@ -1,8 +1,10 @@
-@import "./variable.scss";
-@import "./common.scss";
-@import "./disqus.scss";
-@import "./widget/footer.scss";
-@import "./widget/code.scss";
+@import "./variable";
+@import "./_common";
+
+
+@import "./widget/footer";
+@import "./widget/footer-avator";
+@import "./widget/code";
 
 
 h1, h2, h3, h4, h5, h6 {

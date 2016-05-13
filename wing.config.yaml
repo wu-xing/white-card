@@ -9,3 +9,15 @@ ALL_PAGE_ARTICLE_NUMBER: 7
 PAGING_START_N: 0
 
 LANG: "zh-CN"
+
+
+TEXT:
+  FOOTER: "陳放為的博客 All rights reserved."
+  AUTHOR: "陳放為"
+  AUTHOR_DESCL: "一个码农"
+
+LINK:
+  GITHUB: "https://github.com/AbyChan/"
+
+IMG:
+  FOOTER_AVATOR: '/static/img/avator.png'

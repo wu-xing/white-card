@@ -22,7 +22,7 @@
 
         <div class="slide-tag">
           <ul>
-            <li><a href="/page/1/index.html">所有文章</a></li>
+            <li><a href="">所有文章</a></li>
           </ul>
         </div>
         
@@ -37,10 +37,10 @@
                 
                 <h1><%= article.title %></h1>
                 <span><%= article.showTime %></span>
-                <p><a href="<%= article.outputUrl %>"><%- LANG.readmore %></a></p>
-                <!-- <h5 class="article--title"><a href='/<%- article.outputfilename %>'><%= article.title %></a></h5> -->
+                <p><a href="<%= article.outputfilename %>">Readme More</a></p>
+              <!-- <h5 class="article--title"><a href='/<%- article.outputfilename %>'><%= article.title %></a></h5> -->
               <!-- <p class="article--create-date"><%- article.showTime %></p> -->
-              <div class="article--content-part"><%- article.content  %></div>
+              <div class="article--content-part"><%- article.contentPart  %></div>
             </article>
             </div>
           <% }); %>     
@@ -49,7 +49,17 @@
               <canvas id="article-canvas"></canvas>
             </div>
           </div>
-
+          
+            <!-- <ul class="paging"> -->
+            <!--   <% for(var i = 0; i < pageN; i++) { %> -->
+            <!--      <% var href = i === 0 ? '/' : '/page/' + i %> -->
+            <!--      <% if(i === currentPageN) { %> -->
+            <!--      <li class="paging--number active"><a href="<%= href %>"><%= i %></a></li> -->
+            <!--      <% } else { %> -->
+            <!--      <li class="paging--number%>"><a href="<%= href %>"><%= i %></a></li> -->
+            <!--      <% } %> -->
+            <!--      <% } %> -->
+            <!-- </ul> -->
             
           </div>
           <!-- articles end-->

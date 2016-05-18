@@ -80,8 +80,29 @@ html, body, div {
   margin: 0; }
 
 /* org */
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  to {
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); } }
+@keyframes bounce {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  to {
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); } }
+
 footer {
   padding: 0 1rem; }
+  footer.allarticles {
+    color: white; }
+    footer.allarticles .footer-text p {
+      color: #eee; }
+    footer.allarticles ul svg {
+      fill: white; }
   footer img {
     display: block;
     margin: auto;
@@ -146,22 +167,6 @@ footer {
     footer .footer-text p {
       margin-top: 4px;
       color: #555; }
-
-@-webkit-keyframes bounce {
-  from {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0); }
-  to {
-    -webkit-transform: translate(0, 20%);
-            transform: translate(0, 20%); } }
-
-@keyframes bounce {
-  from {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0); }
-  to {
-    -webkit-transform: translate(0, 20%);
-            transform: translate(0, 20%); } }
 
 .footer-avator {
   margin-top: 2.5rem; }

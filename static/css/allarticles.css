@@ -172,8 +172,29 @@ html, body, div {
       box-shadow: inset 0px 0px 7px #555; }
 
 /* org */
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  to {
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); } }
+@keyframes bounce {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  to {
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); } }
+
 footer {
   padding: 0 1rem; }
+  footer.allarticles {
+    color: white; }
+    footer.allarticles .footer-text p {
+      color: #eee; }
+    footer.allarticles ul svg {
+      fill: white; }
   footer img {
     display: block;
     margin: auto;
@@ -239,22 +260,6 @@ footer {
       margin-top: 4px;
       color: #555; }
 
-@-webkit-keyframes bounce {
-  from {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0); }
-  to {
-    -webkit-transform: translate(0, 20%);
-            transform: translate(0, 20%); } }
-
-@keyframes bounce {
-  from {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0); }
-  to {
-    -webkit-transform: translate(0, 20%);
-            transform: translate(0, 20%); } }
-
 html, body {
   height: 100%; }
 
@@ -278,14 +283,27 @@ body:after {
   box-sizing: border-box;
   background-color: #8e3c32;
   border: 1rem solid #662a24;
-  color: white;
   padding: 1rem; }
 
 .article-list {
   list-style: none;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  position: relative;
+  width: 100%; }
+  .article-list:before, .article-list:after {
+    content: " ";
+    display: table; }
+  .article-list:after {
+    clear: both; }
   .article-list li {
     padding: 0.4rem;
-    margin-bottom: 0.8rem;
-    box-shadow: 0 0 4px #eee; }
+    margin: 1%;
+    box-shadow: 0 0 4px #eee;
+    background-color: white;
+    width: 23%;
+    height: 25rem;
+    float: left;
+    overflow: hidden;
+    border-radius: 7px;
+    box-sizing: border-box; }

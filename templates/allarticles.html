@@ -22,11 +22,8 @@
       <div class="main">
         <h1>所有文章:</h1>
         <div class="hr"></div>
-        <div>
+        <%- include('widget/article-list.ejs'); %>
 
-          <%- include('widget/article-list.ejs'); %>
-          
-        </div>
         
         <%- include('widget/footer.ejs', {type: 'allarticles'}); %>
       </div>

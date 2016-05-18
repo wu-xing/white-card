@@ -1,5 +1,4 @@
 
-
 $main-bg: #8e3c32;
 
 @import "./_common";
@@ -32,20 +31,33 @@ body {
         color: $main-bg;
     }
     border: 1rem solid #662a24;
-    color: white;
+
 
     padding: 1rem;
 }
 
 .article-list {
+    @include clearfix;
     list-style: none;
     padding: 0;
     margin: 0;
-
+    position: relative;
+    width: 100%;
+    
     li {
         padding: 0.4rem;
-        margin-bottom: 0.8rem;
+        margin: 1%;
         box-shadow: 0 0 4px #eee;
+
+        background: {
+            color: white;
+        }
+        width: 23%;
+        height: 25rem;
+        float: left;
+        overflow: hidden;
+        border-radius: 7px;
+        box-sizing: border-box;
     }
 }
 

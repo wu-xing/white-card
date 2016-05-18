@@ -3,7 +3,30 @@
 
 
 
+@keyframes bounce {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 20%);
+    }
+}
+
+
+
 footer {
+
+    &.allarticles {
+        color: white;
+
+        .footer-text p {
+            color: #eee;
+        }
+
+        ul svg {
+            fill: white;
+        }
+    }
 
     padding: 0 1rem;
     img {
@@ -65,12 +88,3 @@ footer {
     }
 }
 
-
-@keyframes bounce {
-    from {
-        transform: translate(0, 0);
-    }
-    to {
-        transform: translate(0, 20%);
-    }
-}

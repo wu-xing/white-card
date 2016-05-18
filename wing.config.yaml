@@ -14,10 +14,10 @@ LANG: "zh-CN"
 TEXT:
   FOOTER: "陳放為的博客 All rights reserved."
   AUTHOR: "陳放為"
-  AUTHOR_DESCL: "一个码农"
+  AUTHOR_DESC: "一个码农"
 
 LINK:
   GITHUB: "https://github.com/AbyChan/"
 
 IMG:
-  FOOTER_AVATOR: '/static/img/avator.png'
+  FOOTER_AVATOR: '/static/img/me.jpg'

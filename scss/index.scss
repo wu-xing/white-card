@@ -19,55 +19,6 @@ html, body {
     height: 100%;
 }
 
-@font-face {
-    font-family: YueSong;
-    src: url('/static/font/yuesong.TTF');
-}
-
-
-header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: $header-height;
-    background-color: black;
-    z-index: 150;
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
-}
-
-header {
-    overflow: hidden;
-    position: relative;
-    .title {
-        color: white;
-        font: {
-            family: YueSong, PMingLiU, Hiragino Sans GB;
-            size: 3rem;
-        }
-        letter-spacing: 10px;
-    }
-
-    .header-text {
-        position: relative;
-        width: 1240px;
-        margin: 0 -620px;
-        left: 50%;
-        height: 100%;
-        img {
-            height: 100%;
-            position: absolute;
-            height: 200%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-    }
-}
-
 #article-canvas {
     height: 100%;
     width: 100%;
@@ -233,10 +184,12 @@ $main-bg: #8e3c32;
         }
        
         h1 {
-            margin: 0;
+            margin: -0.2rem;
             font: {
-                size: 1.5rem;
+                size: 1.4rem;
+                family: $title-font-family;
             }
+            color: #333;
         }
     }
 
@@ -273,7 +226,7 @@ $category-tag-color: white;
             margin: 0 auto;
             transition: transform 300ms ease-in;
             transform: scale(1, 1);
-            
+            border-radius: 50%;
             
         }
     }

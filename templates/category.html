@@ -25,16 +25,9 @@
         <h1><%= title %></h1>
         <div class="hr"></div>
         <div>
-          <ul class="article-list">
-            <% articles.forEach(function(article){ %>
-            <li>
-              <h2><a href="<%= article.outputUrl %>"><%= article.title %></a></h2>
-              <p><%= article.contentPart %></p>
-            </li>
-            
-            <% }); %>
-            
-          </ul>
+
+          <%- include('widget/article-list.ejs'); %>
+
 
           <% if (pageN > 1) {%>
           <ul class="paging">
@@ -51,7 +44,7 @@
           
         </div>
         
-        <%- include('widget/footer.ejs', {TEXT: TEXT}); %>
+        <%- include('widget/footer.ejs', {type: 'allarticles'}); %>
         
 
       </div>

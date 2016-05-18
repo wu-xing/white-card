@@ -1,7 +1,5 @@
 @import "./variable";
 @import "./_common";
-
-
 @import "./widget/footer";
 @import "./widget/footer-avator";
 @import "./widget/code";
@@ -33,54 +31,33 @@ h1, h2, h3, h4, h5, h6 {
 .article {
     position: relative;
     
-    .img-wrapper {
-        position: relative;
-        z-index: 1;
-        
-        span.line {
-            position: absolute;
-            top: 50%;
-            height: 0px;
-            width: 100%;
-            //background-color: #999;
-            display: block;
-            border-bottom: 1px dashed $img-circle-bg;
-
-            &:before, &:after {
-                content: '';
-                display: block;
-                position: absolute;                
-                height: 10px;
-                width: 10px;
-                //border: 1px solid #999;
-                border-radius: 50%;
-                top: -5px;
-                background-color: $img-circle-bg;
-            } 
-
-            &:before {
-                left: -20px;
-            }
-
-            &:after {
-                right: -20px;
-            }
+    h1.title {
+        font: {
+            family: $title-font-family;
         }
-
-        img {
-            position: relative;
-            z-index: 1;
-            max-width: 80%;
+        color: #373a3f;
+        
+        
+        &:after {
+            margin-top: 1rem;
+            content: '';
             display: block;
-            margin: 15px auto 0;
-            border: {
-                radius: 2px;
-            }
-            
-            
+            height: 1rem;
+            width: 100%;
+            opacity: 0.3;
         }
     }
-    
+
+    // 文章图片
+    img {
+        max-width: 90%;
+        display: block;
+        margin: 1rem auto;
+        box-shadow: 1px 3px 6px #333;
+        border: {
+            radius: 3px;
+        }
+    }
     
     
     ul {

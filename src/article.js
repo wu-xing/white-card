@@ -13,7 +13,7 @@ var addPicLine = () => {
 
 
 var init = () => {
-    addPicLine();
+    //addPicLine();
 };
 
 $(document).ready(function(){

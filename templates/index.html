@@ -8,7 +8,8 @@
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="cleartype" content="on">
-        
+
+        <link rel="stylesheet" href="/static/css/hl-styles/monokai-sublime.css">
         <link rel="stylesheet" href="/static/css/index.css">
         
     </head>
@@ -34,7 +35,6 @@
             <% articles.forEach(function(article, i){ %>
             <div class="article-wrapper" style="top: <%= i * 2.5 %>rem" data-top="<%= i  * 2.5 %>rem">
               <article class="article <%= article.type %>" >
-                
                 <h1><%= article.title %></h1>
                 <span><%= article.showTime %></span>
                 <p><a href="<%= article.outputUrl %>"><%- LANG.readmore %></a></p>
@@ -57,7 +57,7 @@
           <div class="slide">
 
             <div class="avator">
-              <img alt="" src="/static/image/avator.png"/>
+              <img alt="" src="<%= IMG.FOOTER_AVATOR %>"/>
             </div>
 
             <ul>
@@ -85,7 +85,9 @@
         
 
         
-        <script src="/static/js/index.bundle.js"></script>
+      <script src="/static/js/index.bundle.js"></script>
+      <script src="/static/js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>
 

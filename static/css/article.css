@@ -1,15 +1,46 @@
 /* org */
 /* org */
+@font-face {
+  font-family: AveriaSansLibre;
+  src: url("/static/font/averia_sans_libre/AveriaSansLibre-Bold.ttf");
+  font-weight: bold;
+  font-style: bold; }
+
+@font-face {
+  font-family: AveriaSansLibre;
+  src: url("/static/font/averia_sans_libre/AveriaSansLibre-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: YueSong;
+  src: url("/static/font/yuesong.TTF"); }
+
 html {
   background-color: #3B3E43; }
 
 body {
+  position: relative;
   background-image: url(/static/img/body-navy.jpg); }
+  body:before, body:after {
+    content: " ";
+    display: table; }
+  body:after {
+    clear: both; }
+
+html {
+  min-height: 100%; }
+
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
 
 div.hr {
   height: 100%;
   height: 1px;
-  background-color: #999; }
+  background-color: #ccc;
+  box-shadow: 1px 1px 1px #ccc; }
 
 ::-webkit-scrollbar {
   display: none; }
@@ -70,24 +101,82 @@ footer {
       float: left;
       display: inline-block;
       margin-left: 0.5rem; }
+      footer ul li:nth-child(1) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 200ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 200ms infinite; }
+      footer ul li:nth-child(2) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 400ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 400ms infinite; }
+      footer ul li:nth-child(3) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 600ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 600ms infinite; }
+      footer ul li:nth-child(4) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 800ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 800ms infinite; }
+      footer ul li:nth-child(5) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms infinite; }
+      footer ul li:nth-child(6) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1200ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1200ms infinite; }
+      footer ul li:nth-child(7) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1400ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1400ms infinite; }
+      footer ul li:nth-child(8) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1600ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1600ms infinite; }
+      footer ul li:nth-child(9) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1800ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1800ms infinite; }
+      footer ul li:nth-child(10) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 2000ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 2000ms infinite; }
     footer ul a {
       display: inline-block;
-      height: 100%; }
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 3px #999; }
     footer ul svg {
-      width: 1.4rem; }
+      width: 1.4rem;
+      border-radius: 50%;
+      box-shadow: 0 0 3px #ccc; }
   footer .footer-text {
     margin-top: 0.7rem;
     height: 2rem; }
     footer .footer-text p {
-      margin-top: 4px; }
+      margin-top: 4px;
+      color: #555; }
 
-.footer-avator img {
-  display: block;
-  margin: 1.5rem auto;
-  width: 10rem; }
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  to {
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); } }
 
-.footer-avator--author, .footer-avator--author-desc {
-  text-align: center; }
+@keyframes bounce {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  to {
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); } }
+
+.footer-avator {
+  margin-top: 2.5rem; }
+  .footer-avator img {
+    border-radius: 50%;
+    display: block;
+    margin: 1.5rem auto 0.8rem;
+    width: 10rem;
+    padding: 0.2rem;
+    border: 0.3rem solid #ccc; }
+  .footer-avator--author, .footer-avator--author-desc {
+    text-align: center; }
+  .footer-avator--author {
+    color: #333;
+    margin: 0 auto; }
 
 code {
   margin: 0.2rem 1rem;
@@ -124,36 +213,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .article {
   position: relative; }
-  .article .img-wrapper {
-    position: relative;
-    z-index: 1; }
-    .article .img-wrapper span.line {
-      position: absolute;
-      top: 50%;
-      height: 0px;
+  .article h1.title {
+    font-family: AveriaSansLibre, Arial, Hiragino Sans GB, SimHei, sans-serif;
+    color: #373a3f; }
+    .article h1.title:after {
+      margin-top: 1rem;
+      content: '';
+      display: block;
+      height: 1rem;
       width: 100%;
-      display: block;
-      border-bottom: 1px dashed rgba(88, 50, 60, 0.8); }
-      .article .img-wrapper span.line:before, .article .img-wrapper span.line:after {
-        content: '';
-        display: block;
-        position: absolute;
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        top: -5px;
-        background-color: rgba(88, 50, 60, 0.8); }
-      .article .img-wrapper span.line:before {
-        left: -20px; }
-      .article .img-wrapper span.line:after {
-        right: -20px; }
-    .article .img-wrapper img {
-      position: relative;
-      z-index: 1;
-      max-width: 80%;
-      display: block;
-      margin: 15px auto 0;
-      border-radius: 2px; }
+      opacity: 0.3; }
+  .article img {
+    max-width: 90%;
+    display: block;
+    margin: 1rem auto;
+    box-shadow: 1px 3px 6px #333;
+    border-radius: 3px; }
   .article ul li {
     list-style: none;
     vertical-align: middle; }

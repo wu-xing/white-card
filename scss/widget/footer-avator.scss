@@ -1,13 +1,22 @@
 
 .footer-avator {
+    margin-top: 2.5rem;
     img {
+        border-radius: 50%;
         display: block;
-        margin: 1.5rem auto;
+        margin: 1.5rem auto 0.8rem;
         width: 10rem;
+        padding: 0.2rem;
+        border: 0.3rem solid #ccc;
     }
-
+    
     &--author, &--author-desc {
         text-align: center;
+    }
+
+    &--author {
+        color: #333;
+        margin: 0 auto;
     }
 }
 

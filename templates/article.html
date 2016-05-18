@@ -31,7 +31,7 @@
       
       
       <div class="article <%- type %>">
-        <h1><%= title %></h1>
+        <h1 class="title"><%= title %></h1>
         <%- content %>
 
         
@@ -40,7 +40,7 @@
 
       <%- include('widget/footer-avator.ejs'); %>
       
-      <%- include('widget/footer.ejs'); %>
+      <%- include('widget/footer.ejs', {type: 'allarticles'}); %>
     </div>
     
     <!-- <div id="disqus_thread"></div> -->

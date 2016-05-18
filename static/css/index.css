@@ -1,15 +1,46 @@
 /* org */
 /* org */
+@font-face {
+  font-family: AveriaSansLibre;
+  src: url("/static/font/averia_sans_libre/AveriaSansLibre-Bold.ttf");
+  font-weight: bold;
+  font-style: bold; }
+
+@font-face {
+  font-family: AveriaSansLibre;
+  src: url("/static/font/averia_sans_libre/AveriaSansLibre-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: YueSong;
+  src: url("/static/font/yuesong.TTF"); }
+
 html {
   background-color: #3B3E43; }
 
 body {
+  position: relative;
   background-image: url(/static/img/body-navy.jpg); }
+  body:before, body:after {
+    content: " ";
+    display: table; }
+  body:after {
+    clear: both; }
+
+html {
+  min-height: 100%; }
+
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
 
 div.hr {
   height: 100%;
   height: 1px;
-  background-color: #999; }
+  background-color: #ccc;
+  box-shadow: 1px 1px 1px #ccc; }
 
 ::-webkit-scrollbar {
   display: none; }
@@ -70,16 +101,67 @@ footer {
       float: left;
       display: inline-block;
       margin-left: 0.5rem; }
+      footer ul li:nth-child(1) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 200ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 200ms infinite; }
+      footer ul li:nth-child(2) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 400ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 400ms infinite; }
+      footer ul li:nth-child(3) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 600ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 600ms infinite; }
+      footer ul li:nth-child(4) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 800ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 800ms infinite; }
+      footer ul li:nth-child(5) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms infinite; }
+      footer ul li:nth-child(6) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1200ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1200ms infinite; }
+      footer ul li:nth-child(7) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1400ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1400ms infinite; }
+      footer ul li:nth-child(8) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1600ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1600ms infinite; }
+      footer ul li:nth-child(9) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1800ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1800ms infinite; }
+      footer ul li:nth-child(10) a {
+        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 2000ms infinite;
+                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 2000ms infinite; }
     footer ul a {
       display: inline-block;
-      height: 100%; }
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 3px #999; }
     footer ul svg {
-      width: 1.4rem; }
+      width: 1.4rem;
+      border-radius: 50%;
+      box-shadow: 0 0 3px #ccc; }
   footer .footer-text {
     margin-top: 0.7rem;
     height: 2rem; }
     footer .footer-text p {
-      margin-top: 4px; }
+      margin-top: 4px;
+      color: #555; }
+
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  to {
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); } }
+
+@keyframes bounce {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  to {
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); } }
 
 @-webkit-keyframes left-right {
   iteration-count: infinite;
@@ -150,44 +232,6 @@ footer {
 
 html, body {
   height: 100%; }
-
-@font-face {
-  font-family: YueSong;
-  src: url("/static/font/yuesong.TTF"); }
-
-header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 0rem;
-  background-color: black;
-  z-index: 150; }
-
-.footer {
-  position: absolute;
-  bottom: 0; }
-
-header {
-  overflow: hidden;
-  position: relative; }
-  header .title {
-    color: white;
-    font-family: YueSong, PMingLiU, Hiragino Sans GB;
-    font-size: 3rem;
-    letter-spacing: 10px; }
-  header .header-text {
-    position: relative;
-    width: 1240px;
-    margin: 0 -620px;
-    left: 50%;
-    height: 100%; }
-    header .header-text img {
-      height: 100%;
-      position: absolute;
-      height: 200%;
-      top: 0;
-      left: 0;
-      z-index: -1; }
 
 #article-canvas {
   height: 100%;
@@ -321,8 +365,10 @@ nav {
       top: 0rem;
       right: -1.05rem; }
     .articles .article h1 {
-      margin: 0;
-      font-size: 1.5rem; }
+      margin: -0.2rem;
+      font-size: 1.4rem;
+      font-family: AveriaSansLibre, Arial, Hiragino Sans GB, SimHei, sans-serif;
+      color: #333; }
   .articles img {
     max-width: 95%;
     margin: 0.5rem auto;
@@ -349,7 +395,8 @@ nav {
       transition: transform 300ms ease-in;
       transition: transform 300ms ease-in, -webkit-transform 300ms ease-in;
       -webkit-transform: scale(1, 1);
-              transform: scale(1, 1); }
+              transform: scale(1, 1);
+      border-radius: 50%; }
   .slide ul {
     margin: 1rem 0;
     padding: 0; }

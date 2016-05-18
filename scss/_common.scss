@@ -1,22 +1,36 @@
 
 @import './variable.scss';
 @import './minix.scss';
+@import './font';
 
 html {
     background-color: #3B3E43;
 }
 
 body {
+    @include clearfix;
+    position: relative;
     background: {
         image: url(/static/img/body-navy.jpg);
     }
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 
 div.hr {
     height: 100%;
     height: 1px;
-    background-color: #999;
+    background-color: #ccc;
+    box-shadow: 1px 1px 1px #ccc;
 }
 
 ::-webkit-scrollbar {

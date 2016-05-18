@@ -1,0 +1,20 @@
+<ul class="article-list">
+    <% articles.forEach(function(article){ %>
+        <li>
+            <h2><%= article.title %></h2>
+            <p><%= article.contentPart %></p>
+        </li>
+        
+    <% }); %>
+    
+</ul>
+<ul class="paging">
+    <% for(var i = 0; i < pageN; i++) { %>
+        <% var href = i === 0 ? '/' : '/page/' + i %>
+        <% if(i === currentPageN) { %>
+            <li class="paging--number active"><a href="<%= href %>"><%= i %></a></li>
+        <% } else { %>
+            <li class="paging--number%>"><a href="<%= href %>"><%= i %></a></li>
+        <% } %>
+    <% } %>
+</ul>

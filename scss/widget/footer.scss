@@ -29,15 +29,28 @@ footer {
             float: left;
             display: inline-block;
             margin-left: 0.5rem;
+
+            @for $i from 1 through 10 {
+                &:nth-child(#{$i}){
+                    a {
+                        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) ($i * 200ms) infinite;
+                    }
+                }
+            }
+            
         }
 
         a {
             display: inline-block;
             height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 3px #999;
         }
 
         svg {
             width: 1.4rem;
+            border-radius: 50%;
+            box-shadow: 0 0 3px #ccc;
         }
         
     }
@@ -47,8 +60,17 @@ footer {
         height: 2rem;
         p {
             margin-top: 4px;
+            color: #555;
         }
     }
 }
 
 
+@keyframes bounce {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 20%);
+    }
+}

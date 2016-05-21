@@ -1,0 +1,15 @@
+<div class="slide-tag <%if (type) {%> <%= type %> <% }%>">
+    <ul>
+        <li class="index" title="<%= LANG.index %>">
+            <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+        </li>
+        <li title="<%= LANG.allarticle %>">
+            <a href="/page/1/index.html"><i class="fa fa-list-alt" aria-hidden="true"></i></a>
+        </li>
+        <% if (type === 'slide-tag-article') {%>
+        <li title="<%= LANG.uplevel %>">
+            <a href="./index.html"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
+        </li>
+        <% } %>
+    </ul>
+</div>

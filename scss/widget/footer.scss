@@ -15,8 +15,9 @@
 
 
 footer {
-
-    &.allarticles {
+    
+    
+    &.footer-allarticles {
         color: white;
 
         .footer-text p {
@@ -48,6 +49,7 @@ footer {
         float: right;
         position: relative;
         vertical-align: middle;
+        
         li {
             float: left;
             display: inline-block;

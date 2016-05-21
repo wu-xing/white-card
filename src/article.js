@@ -2,6 +2,7 @@
 
 let $ = require('jquery');
 
+require('./widget/font.js');
 //require('./radiation-header.js');
 
 var addPicLine = () => {

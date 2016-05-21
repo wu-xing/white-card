@@ -26,15 +26,18 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 10;
 }
 
-
+.yue-song-font .article .title {
+    font: {
+        family: $font-title;
+    }
+}
 
 .article {
     position: relative;
+
     
     h1.title {
-        font: {
-            family: $title-font-family;
-        }
+        font-family: $font-default;
         color: #373a3f;
         
         
@@ -42,10 +45,21 @@ h1, h2, h3, h4, h5, h6 {
             margin-top: 1rem;
             content: '';
             display: block;
-            height: 1rem;
             width: 100%;
             opacity: 0.3;
         }
+    }
+
+    .show-time {
+        
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    p, a {
+        font-family: $font-article;
     }
 
     // 文章图片
@@ -54,8 +68,14 @@ h1, h2, h3, h4, h5, h6 {
         display: block;
         margin: 1rem auto;
         box-shadow: 1px 3px 6px #333;
+        transform: scale(1, 1);
+        transition: transform 150ms ease-in-out;
         border: {
             radius: 3px;
+        }
+
+        &:hover {
+            transform: scale(1.01, 1.01);
         }
     }
     

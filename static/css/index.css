@@ -31,9 +31,13 @@ body {
 html {
   min-height: 100%; }
 
+html, body, div {
+  padding: 0;
+  margin: 0; }
+
 body {
   position: absolute;
-  height: 100%;
+  min-height: 100%;
   width: 100%; }
 
 div.hr {
@@ -42,43 +46,42 @@ div.hr {
   background-color: #ccc;
   box-shadow: 1px 1px 1px #ccc; }
 
-::-webkit-scrollbar {
-  display: none; }
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizelegibility; }
 
 a {
   text-decoration: none;
   color: #0974ae; }
 
-.dash-bar {
-  height: 320px;
-  /* background: { */
-  /*     color: $dash-bar-bg; */
-  /* } */
-  width: 100%;
-  position: relative;
-  z-index: 1; }
-  .dash-bar canvas {
-    height: 620px;
-    width: 100%;
-    position: relative;
-    z-index: 10; }
-  .dash-bar div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; }
-    .dash-bar div img {
-      height: 100%;
-      display: block;
-      margin: 0 auto; }
-
-html, body, div {
-  padding: 0;
-  margin: 0; }
-
+/* .dash-bar { */
+/*     height: $dash-bar-height; */
+/*     /\* background: { *\/ */
+/*     /\*     color: $dash-bar-bg; *\/ */
+/*     /\* } *\/ */
+/*     width: 100%; */
+/*     position: relative; */
+/*     z-index: 1; */
+/*     canvas { */
+/*         height: $dash-bar-height + 300; */
+/*         width: 100%; */
+/*         position: relative; */
+/*         z-index: 10; */
+/*     } */
+/*     div { */
+/*         position: absolute; */
+/*         top: 0; */
+/*         left: 0; */
+/*         z-index: 1; */
+/*         height: 100%; */
+/*         width: 100%; */
+/*         overflow: hidden; */
+/*         img { */
+/*             height: 100%; */
+/*             display: block; */
+/*             margin: 0 auto; */
+/*         } */
+/*     } */
+/* } */
 /* org */
 @-webkit-keyframes bounce {
   from {
@@ -97,11 +100,11 @@ html, body, div {
 
 footer {
   padding: 0 1rem; }
-  footer.allarticles {
+  footer.footer-allarticles {
     color: white; }
-    footer.allarticles .footer-text p {
+    footer.footer-allarticles .footer-text p {
       color: #eee; }
-    footer.allarticles ul svg {
+    footer.footer-allarticles ul svg {
       fill: white; }
   footer img {
     display: block;
@@ -372,7 +375,7 @@ nav {
     .articles .article h1 {
       margin: -0.2rem;
       font-size: 1.4rem;
-      font-family: AveriaSansLibre, Arial, Hiragino Sans GB, SimHei, sans-serif;
+      font-family: AveriaSansLibre, YueSong, sans-serif;
       color: #333; }
   .articles img {
     max-width: 95%;

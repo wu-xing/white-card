@@ -32,6 +32,11 @@
       
       <div class="article <%- type %>">
         <h1 class="title"><%= title %></h1>
+        <span class="show-time"><%= showTime %></span>
+        <br/>
+        <br/>
+        <div class="hr"></div>
+        
         <%- content %>
 
         
@@ -40,7 +45,7 @@
 
       <%- include('widget/footer-avator.ejs'); %>
       
-      <%- include('widget/footer.ejs', {type: 'allarticles'}); %>
+      <%- include('widget/footer.ejs', {type: 'footer-article'}); %>
     </div>
     
     <!-- <div id="disqus_thread"></div> -->

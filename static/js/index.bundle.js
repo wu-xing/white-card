@@ -50,7 +50,7 @@
 
 	let $ = __webpack_require__(1);
 
-	__webpack_require__(2);
+	__webpack_require__(6);
 
 	$.single = function (o) {
 
@@ -11128,7 +11128,11 @@
 
 
 /***/ },
-/* 2 */
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';

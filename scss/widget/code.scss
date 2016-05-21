@@ -1,14 +1,17 @@
 
 
-code {
+code.hljs {
     margin: 0.2rem 1rem;
-    padding: 0.2rem 0.5rem;
-    opacity: 0.9;
-    transition: opacity 500ms ease-in-out, box-shadow 500ms ease-in-out;
-    box-shadow: 0 0 5px #aaa;
+    padding: 1rem 1.2rem !important;
+    opacity: 0.8;
+    transition: opacity 500ms ease-in-out;
+    box-shadow: 2px 2px 5px #aaa;
     border-radius: 3px;
+   
+    font-family: $font-code;
+
     &:hover {
         opacity: 1;
-        box-shadow: 0 0 15px #aaa;
+        box-shadow: 1px 3px 15px #333;
     }
 }

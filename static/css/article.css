@@ -31,9 +31,13 @@ body {
 html {
   min-height: 100%; }
 
+html, body, div {
+  padding: 0;
+  margin: 0; }
+
 body {
   position: absolute;
-  height: 100%;
+  min-height: 100%;
   width: 100%; }
 
 div.hr {
@@ -42,43 +46,42 @@ div.hr {
   background-color: #ccc;
   box-shadow: 1px 1px 1px #ccc; }
 
-::-webkit-scrollbar {
-  display: none; }
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizelegibility; }
 
 a {
   text-decoration: none;
   color: #0974ae; }
 
-.dash-bar {
-  height: 320px;
-  /* background: { */
-  /*     color: $dash-bar-bg; */
-  /* } */
-  width: 100%;
-  position: relative;
-  z-index: 1; }
-  .dash-bar canvas {
-    height: 620px;
-    width: 100%;
-    position: relative;
-    z-index: 10; }
-  .dash-bar div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; }
-    .dash-bar div img {
-      height: 100%;
-      display: block;
-      margin: 0 auto; }
-
-html, body, div {
-  padding: 0;
-  margin: 0; }
-
+/* .dash-bar { */
+/*     height: $dash-bar-height; */
+/*     /\* background: { *\/ */
+/*     /\*     color: $dash-bar-bg; *\/ */
+/*     /\* } *\/ */
+/*     width: 100%; */
+/*     position: relative; */
+/*     z-index: 1; */
+/*     canvas { */
+/*         height: $dash-bar-height + 300; */
+/*         width: 100%; */
+/*         position: relative; */
+/*         z-index: 10; */
+/*     } */
+/*     div { */
+/*         position: absolute; */
+/*         top: 0; */
+/*         left: 0; */
+/*         z-index: 1; */
+/*         height: 100%; */
+/*         width: 100%; */
+/*         overflow: hidden; */
+/*         img { */
+/*             height: 100%; */
+/*             display: block; */
+/*             margin: 0 auto; */
+/*         } */
+/*     } */
+/* } */
 /* org */
 @-webkit-keyframes bounce {
   from {
@@ -97,11 +100,11 @@ html, body, div {
 
 footer {
   padding: 0 1rem; }
-  footer.allarticles {
+  footer.footer-allarticles {
     color: white; }
-    footer.allarticles .footer-text p {
+    footer.footer-allarticles .footer-text p {
       color: #eee; }
-    footer.allarticles ul svg {
+    footer.footer-allarticles ul svg {
       fill: white; }
   footer img {
     display: block;
@@ -183,17 +186,18 @@ footer {
     color: #333;
     margin: 0 auto; }
 
-code {
+code.hljs {
   margin: 0.2rem 1rem;
-  padding: 0.2rem 0.5rem;
-  opacity: 0.9;
-  -webkit-transition: opacity 500ms ease-in-out, box-shadow 500ms ease-in-out;
-  transition: opacity 500ms ease-in-out, box-shadow 500ms ease-in-out;
-  box-shadow: 0 0 5px #aaa;
-  border-radius: 3px; }
-  code:hover {
+  padding: 1rem 1.2rem !important;
+  opacity: 0.8;
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  box-shadow: 2px 2px 5px #aaa;
+  border-radius: 3px;
+  font-family: "Lucida Console", Monaco, monospace; }
+  code.hljs:hover {
     opacity: 1;
-    box-shadow: 0 0 15px #aaa; }
+    box-shadow: 1px 3px 15px #333; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold; }
@@ -216,24 +220,39 @@ h1, h2, h3, h4, h5, h6 {
   .main:after {
     clear: both; }
 
+.yue-song-font .article .title {
+  font-family: AveriaSansLibre, YueSong, sans-serif; }
+
 .article {
   position: relative; }
   .article h1.title {
-    font-family: AveriaSansLibre, Arial, Hiragino Sans GB, SimHei, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     color: #373a3f; }
     .article h1.title:after {
       margin-top: 1rem;
       content: '';
       display: block;
-      height: 1rem;
       width: 100%;
       opacity: 0.3; }
+  .article p {
+    line-height: 1.6; }
+  .article p, .article a {
+    font-family: Helvetica, Arial, sans-serif; }
   .article img {
     max-width: 90%;
     display: block;
     margin: 1rem auto;
     box-shadow: 1px 3px 6px #333;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-transition: -webkit-transform 150ms ease-in-out;
+    transition: -webkit-transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
     border-radius: 3px; }
+    .article img:hover {
+      -webkit-transform: scale(1.01, 1.01);
+              transform: scale(1.01, 1.01); }
   .article ul li {
     list-style: none;
     vertical-align: middle; }

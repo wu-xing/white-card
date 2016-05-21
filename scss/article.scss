@@ -1,10 +1,17 @@
 @import "./variable";
 @import "./_common";
+@import "./_minix";
 
 @import "./widget/footer";
 @import "./widget/footer-avator";
 @import "./widget/code";
 @import "./widget/slide-tag";
+
+body {
+    @include hide-scroll-bar;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
 
 .main {
     @include clearfix;
@@ -16,9 +23,23 @@
     box-sizing: border-box;
     padding: 1.5rem 1rem 2rem;
     border-radius: 3px;
-    margin: 50px auto 4rem;
-    box-shadow: 0px 0px 60px #333;
+    margin: 3rem auto 3rem;
+    box-shadow: 0px 0px 10px black;
     z-index: 10;
+    
+    @media screen and (max-width: $media-sm) {
+        width: 100%;
+        margin: 2rem auto 2rem;
+        box-shadow: none;
+    }
+
+    @media screen and (min-width: $media-sm) and (max-width: $media-md) {
+        
+    }
+    
+    @media screen and (max-width: $media-sm) and (max-width: $media-lg) {
+        
+    }
 }
 
 .yue-song-font .article .title {
@@ -28,14 +49,15 @@
 }
 
 .article {
+    @include dont-break-out;
     position: relative;
 
+    
     
     h1.title {
         font-family: $font-default;
         color: #373a3f;
-        
-        
+                
         &:after {
             margin-top: 1rem;
             content: '';
@@ -100,6 +122,28 @@
             li:before{
                 height: $section-ul-height * 0.9;
                 width: $section-ul-height * 0.9;
+            }
+        }
+    }
+
+    blockquote {
+        margin: 0.5rem 1rem;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        ul {
+            padding-right: 1rem;
+            margin: 0;
+        }
+        
+        ul, li {
+            list-style: upper-roman;
+        }
+
+        li {
+            line-height: 1.5;
+            &:before {
+                display: none;
             }
         }
     }

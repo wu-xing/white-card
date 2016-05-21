@@ -20,8 +20,7 @@ html {
   background-color: #3B3E43; }
 
 a, button, input, textarea {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-modify: read-write-plaintext-only; }
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   position: relative;
@@ -142,7 +141,7 @@ footer {
 
 code.hljs {
   margin: 0.2rem 1rem;
-  padding: 1rem 1.2rem !important;
+  padding: 1rem 1.2rem;
   opacity: 0.8;
   transition: opacity 500ms ease-in-out;
   box-shadow: 2px 2px 5px #aaa;
@@ -152,6 +151,14 @@ code.hljs {
   code.hljs:hover {
     opacity: 1;
     box-shadow: 1px 3px 15px #333; }
+  @media screen and (max-width: 768px) {
+    code.hljs {
+      padding: 0.2rem 0.3rem;
+      margin: 0;
+      box-shadow: none;
+      transition: none;
+      opacity: 0.9;
+      font-size: 0.5rem; } }
 
 .slide-tag {
   position: absolute;
@@ -186,6 +193,12 @@ code.hljs {
     .slide-tag {
       display: none; } }
 
+body {
+  padding: 0 1rem;
+  box-sizing: border-box; }
+  body::-webkit-scrollbar {
+    width: 0; }
+
 .main {
   position: relative;
   max-width: 1420px;
@@ -195,19 +208,34 @@ code.hljs {
   box-sizing: border-box;
   padding: 1.5rem 1rem 2rem;
   border-radius: 3px;
-  margin: 50px auto 4rem;
-  box-shadow: 0px 0px 60px #333;
+  margin: 3rem auto 3rem;
+  box-shadow: 0px 0px 10px black;
   z-index: 10; }
   .main:before, .main:after {
     content: " ";
     display: table; }
   .main:after {
     clear: both; }
+  @media screen and (max-width: 768px) {
+    .main {
+      width: 100%;
+      margin: 2rem auto 2rem;
+      box-shadow: none; } }
 
 .yue-song-font .article .title {
   font-family: AveriaSansLibre, YueSong, sans-serif; }
 
 .article {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  hyphens: auto;
   position: relative; }
   .article h1.title {
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
@@ -253,5 +281,19 @@ code.hljs {
     .article ul ul li:before {
       height: 19.8px;
       width: 19.8px; }
+  .article blockquote {
+    margin: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 0.5rem 0; }
+    .article blockquote ul {
+      padding-right: 1rem;
+      margin: 0; }
+    .article blockquote ul, .article blockquote li {
+      list-style: upper-roman; }
+    .article blockquote li {
+      line-height: 1.5; }
+      .article blockquote li:before {
+        display: none; }
   .article.org .section-number {
     margin-right: 10px; }

@@ -2,7 +2,7 @@
 
 code.hljs {
     margin: 0.2rem 1rem;
-    padding: 1rem 1.2rem !important;
+    padding: 1rem 1.2rem;
     opacity: 0.8;
     transition: opacity 500ms ease-in-out;
     box-shadow: 2px 2px 5px #aaa;
@@ -16,5 +16,23 @@ code.hljs {
     &:hover {
         opacity: 1;
         box-shadow: 1px 3px 15px #333;
+    }
+
+    @media screen and (max-width: $media-sm) {
+        padding: 0.2rem 0.3rem;
+        margin: 0;
+        box-shadow: none;
+        transition: none;
+        opacity: 0.9;
+
+        font-size: 0.5rem;
+    }
+    
+    @media screen and (min-width: $media-sm) and (max-width: $media-md) {
+        
+    }
+    
+    @media screen and (max-width: $media-sm) and (max-width: $media-lg) {
+        
     }
 }

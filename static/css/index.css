@@ -20,8 +20,7 @@ html {
   background-color: #3B3E43; }
 
 a, button, input, textarea {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-modify: read-write-plaintext-only; }
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   position: relative;
@@ -160,7 +159,7 @@ footer {
 
 code.hljs {
   margin: 0.2rem 1rem;
-  padding: 1rem 1.2rem !important;
+  padding: 1rem 1.2rem;
   opacity: 0.8;
   transition: opacity 500ms ease-in-out;
   box-shadow: 2px 2px 5px #aaa;
@@ -170,6 +169,14 @@ code.hljs {
   code.hljs:hover {
     opacity: 1;
     box-shadow: 1px 3px 15px #333; }
+  @media screen and (max-width: 768px) {
+    code.hljs {
+      padding: 0.2rem 0.3rem;
+      margin: 0;
+      box-shadow: none;
+      transition: none;
+      opacity: 0.9;
+      font-size: 0.5rem; } }
 
 html, body {
   height: 100%; }
@@ -226,14 +233,14 @@ body {
         display: none; }
       .main-wrapper .article-wrapper {
         width: 100%;
-        box-shadow: none; }
+        box-shadow: 0px 0px 0px #fff; }
         .main-wrapper .article-wrapper.active .article {
           box-shadow: none; }
         .main-wrapper .article-wrapper .article {
           width: auto; }
       .main-wrapper .articles {
         width: 100%;
-        box-shadow: none; }
+        box-shadow: 0px 0px 0px #fff; }
         .main-wrapper .articles .article {
           box-shadow: none;
           border: 1px solid #646464; } }
@@ -262,6 +269,7 @@ body {
   .article-wrapper.cover {
     height: 90%; }
     .article-wrapper.cover .article {
+      height: 90%;
       background-image: url(/static/img/fish.jpg);
       background-size: cover;
       background-repeat: no-repeat;

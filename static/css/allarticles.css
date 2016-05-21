@@ -19,8 +19,7 @@ html {
   background-color: #3B3E43; }
 
 a, button, input, textarea {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-modify: read-write-plaintext-only; }
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   position: relative;

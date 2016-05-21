@@ -7,7 +7,7 @@ gulp.task('sass', function () {
     gulp.src('./scss/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
-	    browsers: ['>1%']
+	    browsers: ['> 80%']
 	}))
         .pipe(gulp.dest('./static/css'));
 });

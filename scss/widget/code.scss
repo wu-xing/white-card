@@ -7,8 +7,11 @@ code.hljs {
     transition: opacity 500ms ease-in-out;
     box-shadow: 2px 2px 5px #aaa;
     border-radius: 3px;
-   
-    font-family: $font-code;
+    
+    font: {
+        size: 0.6rem;
+        family: $font-code;
+    }
 
     &:hover {
         opacity: 1;

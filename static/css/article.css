@@ -19,6 +19,10 @@
 html {
   background-color: #3B3E43; }
 
+a, button, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: read-write-plaintext-only; }
+
 body {
   position: relative;
   background-image: url(/static/img/body-navy.jpg); }
@@ -43,8 +47,7 @@ body {
 div.hr {
   height: 100%;
   height: 1px;
-  background-color: #ccc;
-  box-shadow: 1px 1px 1px #ccc; }
+  background-color: #e8e8e8; }
 
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizelegibility; }
@@ -53,58 +56,20 @@ a {
   text-decoration: none;
   color: #0974ae; }
 
-/* .dash-bar { */
-/*     height: $dash-bar-height; */
-/*     /\* background: { *\/ */
-/*     /\*     color: $dash-bar-bg; *\/ */
-/*     /\* } *\/ */
-/*     width: 100%; */
-/*     position: relative; */
-/*     z-index: 1; */
-/*     canvas { */
-/*         height: $dash-bar-height + 300; */
-/*         width: 100%; */
-/*         position: relative; */
-/*         z-index: 10; */
-/*     } */
-/*     div { */
-/*         position: absolute; */
-/*         top: 0; */
-/*         left: 0; */
-/*         z-index: 1; */
-/*         height: 100%; */
-/*         width: 100%; */
-/*         overflow: hidden; */
-/*         img { */
-/*             height: 100%; */
-/*             display: block; */
-/*             margin: 0 auto; */
-/*         } */
-/*     } */
-/* } */
 /* org */
-@-webkit-keyframes bounce {
-  from {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0); }
-  to {
-    -webkit-transform: translate(0, 20%);
-            transform: translate(0, 20%); } }
 @keyframes bounce {
   from {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0); }
+    transform: translate(0, 0); }
   to {
-    -webkit-transform: translate(0, 20%);
-            transform: translate(0, 20%); } }
+    transform: translate(0, 20%); } }
 
 footer {
   padding: 0 1rem; }
-  footer.footer-allarticles {
+  footer.footer-allarticles, footer.footer-category {
     color: white; }
-    footer.footer-allarticles .footer-text p {
+    footer.footer-allarticles .footer-text p, footer.footer-category .footer-text p {
       color: #eee; }
-    footer.footer-allarticles ul svg {
+    footer.footer-allarticles ul svg, footer.footer-category ul svg {
       fill: white; }
   footer img {
     display: block;
@@ -126,40 +91,29 @@ footer {
       display: inline-block;
       margin-left: 0.5rem; }
       footer ul li:nth-child(1) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 200ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 200ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 200ms infinite; }
       footer ul li:nth-child(2) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 400ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 400ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 400ms infinite; }
       footer ul li:nth-child(3) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 600ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 600ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 600ms infinite; }
       footer ul li:nth-child(4) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 800ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 800ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 800ms infinite; }
       footer ul li:nth-child(5) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms infinite; }
       footer ul li:nth-child(6) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1200ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1200ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1200ms infinite; }
       footer ul li:nth-child(7) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1400ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1400ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1400ms infinite; }
       footer ul li:nth-child(8) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1600ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1600ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1600ms infinite; }
       footer ul li:nth-child(9) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1800ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1800ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 1800ms infinite; }
       footer ul li:nth-child(10) a {
-        -webkit-animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 2000ms infinite;
-                animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 2000ms infinite; }
+        animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 2000ms infinite; }
     footer ul a {
       display: inline-block;
       height: 100%;
-      border-radius: 50%;
-      box-shadow: 0 0 3px #999; }
+      border-radius: 50%; }
     footer ul svg {
       width: 1.4rem;
       border-radius: 50%;
@@ -179,7 +133,7 @@ footer {
     margin: 1.5rem auto 0.8rem;
     width: 10rem;
     padding: 0.2rem;
-    border: 0.3rem solid #ccc; }
+    border: 0.3rem solid #474b52; }
   .footer-avator--author, .footer-avator--author-desc {
     text-align: center; }
   .footer-avator--author {
@@ -190,17 +144,47 @@ code.hljs {
   margin: 0.2rem 1rem;
   padding: 1rem 1.2rem !important;
   opacity: 0.8;
-  -webkit-transition: opacity 500ms ease-in-out;
   transition: opacity 500ms ease-in-out;
   box-shadow: 2px 2px 5px #aaa;
   border-radius: 3px;
+  font-size: 0.6rem;
   font-family: "Lucida Console", Monaco, monospace; }
   code.hljs:hover {
     opacity: 1;
     box-shadow: 1px 3px 15px #333; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold; }
+.slide-tag {
+  position: absolute;
+  left: 5%;
+  z-index: 1;
+  margin-top: 2rem; }
+  .slide-tag.slide-tag-index .index {
+    display: none; }
+  .slide-tag ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .slide-tag ul li {
+      margin-top: 1rem;
+      display: block;
+      height: 2rem;
+      width: 2rem;
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 1px 1px 13px #000; }
+      .slide-tag ul li a {
+        background-color: white;
+        position: relative;
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 2rem;
+        text-align: center;
+        color: black; }
+  @media screen and (max-width: 768px) {
+    .slide-tag {
+      display: none; } }
 
 .main {
   position: relative;
@@ -212,7 +196,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem 1rem 2rem;
   border-radius: 3px;
   margin: 50px auto 4rem;
-  box-shadow: 0px 0px 60px #bebebe;
+  box-shadow: 0px 0px 60px #333;
   z-index: 10; }
   .main:before, .main:after {
     content: " ";
@@ -234,6 +218,11 @@ h1, h2, h3, h4, h5, h6 {
       display: block;
       width: 100%;
       opacity: 0.3; }
+  .article .show-time {
+    font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555; }
   .article p {
     line-height: 1.6; }
   .article p, .article a {
@@ -243,16 +232,11 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     margin: 1rem auto;
     box-shadow: 1px 3px 6px #333;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    -webkit-transition: -webkit-transform 150ms ease-in-out;
-    transition: -webkit-transform 150ms ease-in-out;
+    transform: scale(1, 1);
     transition: transform 150ms ease-in-out;
-    transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
     border-radius: 3px; }
     .article img:hover {
-      -webkit-transform: scale(1.01, 1.01);
-              transform: scale(1.01, 1.01); }
+      transform: scale(1.01, 1.01); }
   .article ul li {
     list-style: none;
     vertical-align: middle; }

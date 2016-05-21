@@ -10,4 +10,8 @@
 }
 
 
-
+@mixin hide-scroll-bar() {
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}

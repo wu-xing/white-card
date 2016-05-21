@@ -6,6 +6,11 @@ html {
     background-color: #3B3E43;
 }
 
+a, button, input, textarea{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-modify: read-write-plaintext-only; 
+}
+
 body {
     @include clearfix;
     position: relative;
@@ -33,8 +38,7 @@ body {
 div.hr {
     height: 100%;
     height: 1px;
-    background-color: #ccc;
-    box-shadow: 1px 1px 1px #ccc;
+    background-color: #e8e8e8;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,37 +49,3 @@ a {
     text-decoration: none;
     color: $href-color;
 }
-
-/* .dash-bar { */
-/*     height: $dash-bar-height; */
-/*     /\* background: { *\/ */
-/*     /\*     color: $dash-bar-bg; *\/ */
-/*     /\* } *\/ */
-/*     width: 100%; */
-/*     position: relative; */
-/*     z-index: 1; */
-    
-/*     canvas { */
-/*         height: $dash-bar-height + 300; */
-/*         width: 100%; */
-/*         position: relative; */
-/*         z-index: 10; */
-/*     } */
-
-/*     div { */
-/*         position: absolute; */
-/*         top: 0; */
-/*         left: 0; */
-/*         z-index: 1; */
-/*         height: 100%; */
-/*         width: 100%; */
-/*         overflow: hidden; */
-/*         img { */
-/*             height: 100%; */
-/*             display: block; */
-/*             margin: 0 auto; */
-/*         } */
-/*     } */
-/* } */
-
-

@@ -1,27 +1,58 @@
 'use strict';
 
 //require('./radiation-header.js');
-
+require('./widget/font.js');
 
 let $ = require('jquery');
 
-require('./card-canvas');
+//require('./card-canvas');
 
 $.single = (function(o){
-    
     var collection = $([1]); // Fill with 1 item, to make sure length === 1
-    
     return function(element) {
-        
-        // Give collection the element:
         collection[0] = element;
-        
-        // Return the collection:
         return collection;
-        
     };
-    
 }());
+
+var requestFullScreen = () => {
+    var body = document.documentElement;
+    if (body.requestFullscreen) {
+        body.requestFullscreen();
+    } else if (body.webkitrequestFullscreen) {
+        body.webkitrequestFullscreen();
+    } else if (body.mozrequestFullscreen) {
+        body.mozrequestFullscreen();
+    } else if (body.msrequestFullscreen) {
+        body.msrequestFullscreen();
+    }    
+};
+requestFullScreen();
+
+
+let tryLockScreen = () => {
+    screen.lockOrientation && screen.lockOrientation('portrait');
+};
+
+tryLockScreen();
+
+
+let screenWidth;
+
+let changeWidth = function(){
+    screenWidth = window.innerWidth;
+};
+
+$(window).on('resize', changeWidth);
+changeWidth();
+
+
+let mediaMap = {
+    sm: 768,
+    md: 992,
+    lg: 1200
+};
+
 
 let clicked = false;
 $('.article-wrapper').on('click', function(){
@@ -36,9 +67,14 @@ $('.article-wrapper').on('click', function(){
             ee.css('top', ee.data('top'));
             //ee.find('.article').css('overflow', 'hidden');
             ee[0].scrollTop = 0;
-            setTimeout(function(){
-                ee.removeClass('blur');
-            }, 1000);
+
+            if( screenWidth > mediaMap['sm'] ){
+                setTimeout(function(){
+                    ee.removeClass('blur');
+                }, 1000);
+            }
+
+            
         });
         
         setTimeout(function(){
@@ -55,13 +91,11 @@ $('.article-wrapper').on('click', function(){
             setTimeout(function(){
                 $('.article-wrapper').map(function(){
                     let ee = $(this);
-                    if( ee[0] !== e[0] ){
+                    if( screenWidth > mediaMap['sm'] && ee[0] !== e[0] ){
                         ee.addClass('blur');
                     }
                 });
-            }, 700);
-            
-            
+            }, 700);            
         }, 500);
     }
 });

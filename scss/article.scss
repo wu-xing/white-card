@@ -1,15 +1,10 @@
 @import "./variable";
 @import "./_common";
+
 @import "./widget/footer";
 @import "./widget/footer-avator";
 @import "./widget/code";
-
-
-h1, h2, h3, h4, h5, h6 {
-    font: {
-        weight: bold;
-    }
-}
+@import "./widget/slide-tag";
 
 .main {
     @include clearfix;
@@ -22,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1.5rem 1rem 2rem;
     border-radius: 3px;
     margin: 50px auto 4rem;
-    box-shadow: 0px 0px 60px #bebebe;
+    box-shadow: 0px 0px 60px #333;
     z-index: 10;
 }
 
@@ -51,7 +46,10 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .show-time {
-        
+        font-family: $font-time;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #555;
     }
 
     p {

@@ -4,8 +4,9 @@ require('script!fontfaceonload/dist/fontfaceonload.js');
 
 FontFaceOnload("YueSong", {
     success: function() {
-        window.document.body.className += 'yue-song-font';
-        
+        setTimeout(function(){
+            window.document.body.className += 'yue-song-font';
+        });
     }
 });
 

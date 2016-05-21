@@ -1,15 +1,11 @@
-
-$main-bg: #8e3c32;
-
 @import "./_common";
 @import "./_minix";
+@import "./_variable";
 @import "./widget/slide-tag";
+@import "./widget/article-list";
 @import "./widget/paging.scss";
 @import "./widget/footer.scss";
 
-html, body {
-    height: 100%;
-}
 
 body {
     @include clearfix;
@@ -18,6 +14,11 @@ body {
 .slide-tag {
     left: 10%;
 }
+
+.yue-song-font .main h1 {
+    font-family: $font-title;
+}
+
 
 .main {
     z-index: 20;
@@ -30,34 +31,15 @@ body {
     background: {
         color: $main-bg;
     }
-    border: 1rem solid #662a24;
-
-
+    border: 1rem solid $main-border-bg;
     padding: 1rem;
-}
 
-.article-list {
-    @include clearfix;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    width: 100%;
-    
-    li {
-        padding: 0.4rem;
-        margin: 1%;
-        box-shadow: 0 0 4px #eee;
-
-        background: {
-            color: white;
+    h1 {
+        margin: 0.7rem auto 0.8rem;
+        font: {
+            family: $font-default;
         }
-        width: 23%;
-        height: 25rem;
-        float: left;
-        overflow: hidden;
-        border-radius: 7px;
-        box-sizing: border-box;
+        color: #eee;
     }
 }
 

@@ -1,10 +1,12 @@
 @import "./_common";
 @import "./_minix";
 @import "./_variable";
+
 @import "./widget/slide-tag";
 @import "./widget/article-list";
-@import "./widget/paging.scss";
-@import "./widget/footer.scss";
+@import "./widget/paging";
+@import "./widget/footer";
+@import "./widget/container";
 
 
 body {
@@ -15,31 +17,18 @@ body {
     left: 10%;
 }
 
-.yue-song-font .main h1 {
+.yue-song-font .main-wrapper h1 {
     font-family: $font-title;
 }
 
 
-.main {
-    z-index: 20;
-    position: relative;
-    top: 0;
-    margin: 2rem auto;
-    width: 80%;
-    border-radius: 0.1rem;
-    box-sizing: border-box;
-    background: {
-        color: $main-bg;
-    }
-    border: 1rem solid $main-border-bg;
-    padding: 1rem;
-
+.main-wrapper {
+    padding: 0 1rem 1rem;
+    margin-bottom: 1rem;
     h1 {
-        margin: 0.7rem auto 0.8rem;
-        font: {
-            family: $font-default;
-        }
-        color: #eee;
+        color: white;
+        text-shadow: 0 0 1px white;
+        
     }
 }
 

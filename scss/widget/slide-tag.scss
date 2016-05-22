@@ -1,3 +1,5 @@
+@import '../variable.scss';
+@import '../minix.scss';
 
 $tag-bg: white;
 
@@ -7,6 +9,7 @@ $tag-color: black;
 
 
 .slide-tag {
+    @include clearfix;
     &.slide-tag-index {
         .index {
             display: none;

@@ -16,7 +16,8 @@
   src: url("/static/font/yuesong.TTF"); }
 
 html {
-  background-color: #3B3E43; }
+  background-color: #3B3E43;
+  height: 100%; }
 
 a, button, input, textarea {
   -webkit-tap-highlight-color: transparent; }
@@ -55,11 +56,17 @@ a {
   color: #0974ae; }
 
 /* org */
+/* org */
 .slide-tag {
   position: absolute;
   left: 5%;
   z-index: 1;
   margin-top: 2rem; }
+  .slide-tag:before, .slide-tag:after {
+    content: " ";
+    display: table; }
+  .slide-tag:after {
+    clear: both; }
   .slide-tag.slide-tag-index .index {
     display: none; }
   .slide-tag ul {
@@ -106,7 +113,7 @@ a {
   .article-list li {
     padding: 0.4rem;
     margin: 1%;
-    box-shadow: 0 0 10px #777;
+    box-shadow: 0 0 12px black;
     background-color: white;
     width: 23%;
     height: 18rem;
@@ -114,21 +121,53 @@ a {
     overflow: hidden;
     border-radius: 7px;
     box-sizing: border-box;
-    padding: 0.5rem; }
+    padding: 0.5rem;
+    position: relative;
+    /* &:before { */
+    /*     content: ''; */
+    /*     display: block; */
+    /*     position: absolute; */
+    /*     height: 1rem; */
+    /*     width: 1rem; */
+    /*     background-color: black; */
+    /*     left: 50%; */
+    /*     margin-left: -0.5rem; */
+    /*     top: 0.1rem; */
+    /*     z-index: 10; */
+    /*     border-radius: 50%; */
+    /*     opacity: 0.1; */
+    /* } */ }
     .article-list li::-webkit-scrollbar {
-      width: 0; }
+      display: none; }
     .article-list li h2 {
       margin: 0.2rem auto;
       font-size: 1rem; }
     .article-list li p {
       margin: 0.2rem auto;
       width: 100%;
-      font-size: 0.9rem; }
+      font-size: 0.9rem;
+      line-height: 1.2; }
+    .article-list li .hr {
+      margin: 0.3rem auto 0.5rem; }
     .article-list li .show-time {
       font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
       font-size: 9px;
       line-height: 1.5;
       color: #777; }
+  @media screen and (max-width: 1200px) {
+    .article-list li {
+      width: 31%; } }
+  @media screen and (max-width: 768px) {
+    .article-list li {
+      margin: 2%;
+      width: 46%;
+      box-shadow: none;
+      height: auto; } }
+  @media screen and (max-width: 400px) {
+    .article-list li {
+      margin: 5%;
+      width: 90%;
+      height: auto; } }
 
 .paging {
   list-style: none;
@@ -177,7 +216,8 @@ footer {
     height: 100px;
     border-radius: 50%; }
   footer p {
-    display: inline-block; }
+    display: inline-block;
+    margin: 0; }
   footer ul {
     padding: 0;
     margin: 0;
@@ -225,6 +265,47 @@ footer {
       margin-top: 4px;
       color: #555; }
 
+/* org */
+body {
+  position: relative;
+  padding: 2rem 3rem 2rem;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 100; }
+  body::-webkit-scrollbar {
+    display: none; }
+  @media screen and (max-width: 768px) {
+    body {
+      padding: 0; } }
+  @media screen and (min-height: 900px) {
+    body {
+      padding: 3rem 3rem 3rem; } }
+
+.main-wrapper {
+  overflow: scroll;
+  z-index: 20;
+  position: relative;
+  top: 0;
+  margin: auto;
+  width: 1240px;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 18px #000; }
+  .main-wrapper::-webkit-scrollbar {
+    display: none; }
+  @media screen and (max-width: 1350px) {
+    .main-wrapper {
+      width: 95%; } }
+  @media screen and (max-width: 768px) {
+    .main-wrapper {
+      border: none;
+      width: 100%;
+      background: none;
+      box-shadow: none; } }
+
 body:before, body:after {
   content: " ";
   display: table; }
@@ -235,21 +316,12 @@ body:after {
 .slide-tag {
   left: 10%; }
 
-.yue-song-font .main h1 {
+.yue-song-font .main-wrapper h1 {
   font-family: AveriaSansLibre, YueSong, sans-serif; }
 
-.main {
-  z-index: 20;
-  position: relative;
-  top: 0;
-  margin: 2rem auto;
-  width: 80%;
-  border-radius: 0.1rem;
-  box-sizing: border-box;
-  background-color: #8e3c32;
-  border: 1rem solid #662a24;
-  padding: 1rem; }
-  .main h1 {
-    margin: 0.7rem auto 0.8rem;
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    color: #eee; }
+.main-wrapper {
+  padding: 0 1rem 1rem;
+  margin-bottom: 1rem; }
+  .main-wrapper h1 {
+    color: white;
+    text-shadow: 0 0 1px white; }

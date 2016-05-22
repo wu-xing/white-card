@@ -16,12 +16,16 @@
     margin: 0;
     position: relative;
     width: 100%;
+
+    
+    
+    
     
     li {
+        @include hide-scroll-bar;
         padding: 0.4rem;
         margin: 1%;
-        box-shadow: 0 0 10px #777;
-
+        box-shadow: 0 0 12px black;
         background: {
             color: white;
         }
@@ -32,10 +36,22 @@
         border-radius: 7px;
         box-sizing: border-box;
         padding: 0.5rem;
+        position: relative;
 
-        &::-webkit-scrollbar {
-            width: 0;
-        }
+        /* &:before { */
+        /*     content: ''; */
+        /*     display: block; */
+        /*     position: absolute; */
+        /*     height: 1rem; */
+        /*     width: 1rem; */
+        /*     background-color: black; */
+        /*     left: 50%; */
+        /*     margin-left: -0.5rem; */
+        /*     top: 0.1rem; */
+        /*     z-index: 10; */
+        /*     border-radius: 50%; */
+        /*     opacity: 0.1; */
+        /* } */
         
         h2 {
             margin: 0.2rem auto;
@@ -46,6 +62,11 @@
             margin: 0.2rem auto;
             width: 100%;
             font-size: 0.9rem;
+            line-height: 1.2;
+        }
+
+        .hr {
+            margin: 0.3rem auto 0.5rem;
         }
 
         .show-time {
@@ -56,6 +77,28 @@
         }
     }
 
+    @media screen and (max-width: $media-lg) {
+        li {
+            width: 31%;
+        }
+    }
+
+    @media screen and (max-width: $media-sm) {
+        li {
+            margin: 2%;
+            width: 46%;
+            box-shadow: none;
+            height: auto;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        li {
+            margin: 5%;
+            width: 90%;
+            height: auto;
+        }
+    }
     
 }
 

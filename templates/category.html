@@ -21,26 +21,13 @@
         </ul>
       </div>
 
-      <div class="main">
+      <div class="main-wrapper">
         <h1><%= title %></h1>
         <div class="hr"></div>
         <div>
 
           <%- include('widget/article-list.ejs'); %>
 
-
-          <% if (pageN > 1) {%>
-          <ul class="paging">
-            <% for(var i = 0; i < pageN; i++) { %>
-               <% var href = i === 0 ? '/' : '/page/' + i %>
-               <% if(i === currentPageN) { %>
-               <li class="paging--number active"><a href="<%= href %>"><%= i %></a></li>
-               <% } else { %>
-               <li class="paging--number%>"><a href="<%= href %>"><%= i %></a></li>
-               <% } %>
-               <% } %>
-          </ul>
-          <% }%>
           
         </div>
         

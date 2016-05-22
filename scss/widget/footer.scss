@@ -15,7 +15,7 @@
 
 
 footer {
-    
+    padding: 0 1rem;
     
     &.footer-allarticles, &.footer-category {
         color: white;
@@ -29,7 +29,7 @@ footer {
         }
     }
 
-    padding: 0 1rem;
+
     img {
         display: block;
         margin: auto;
@@ -39,6 +39,7 @@ footer {
 
     p {
         display: inline-block;
+        margin: 0;
     }
 
     ul {

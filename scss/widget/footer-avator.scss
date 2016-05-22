@@ -18,6 +18,20 @@
         color: #333;
         margin: 0 auto;
     }
+
+    @media screen and (max-width: $media-sm) {
+        img {
+            width: 7.5rem;
+        }
+    }
+    
+    @media screen and (min-width: $media-sm) and (max-width: $media-md) {
+        
+    }
+    
+    @media screen and (max-width: $media-sm) and (max-width: $media-lg) {
+        
+    }
 }
 
 

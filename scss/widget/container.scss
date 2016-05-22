@@ -1,0 +1,55 @@
+@import "./_variable";
+
+body {
+    @include hide-scroll-bar;
+    position: relative;
+    padding: 2rem 3rem 2rem;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 100;
+
+    @media screen and (max-width: $media-sm) {
+        padding: 0;
+    }
+
+    @media screen and (min-height: 900px) {
+        padding: 3rem 3rem 3rem;
+    }
+    
+}
+
+
+.main-wrapper {
+    @include hide-scroll-bar;
+
+    overflow: scroll;
+    z-index: 20;
+    position: relative;
+    top: 0;
+    margin: auto;
+    width: $main-max-width;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 18px #000;
+    
+    
+
+    
+    @media screen and (max-width: 1350px) {
+        width: 95%;
+    }
+
+    
+
+    @media screen and (max-width: $media-sm) {
+        border: none;
+        width: 100%;
+        background: none;
+        box-shadow: none;
+
+    }
+
+}

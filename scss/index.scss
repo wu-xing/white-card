@@ -4,6 +4,8 @@
 @import './widget/footer';
 @import './widget/slide-tag';
 @import './widget/code';
+@import './widget/container';
+@import './widget/category-tag';
 
 $article-bg: white;
 
@@ -29,56 +31,10 @@ html, body {
     font-family: $font-title;
 }
 
-body {    
-    padding: 1rem 3rem 1rem;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    z-index: 100;
-
-    @media screen and (max-width: $media-sm) {
-        padding: 0;
-    }
-    
-}
-
-
-.paper-clip {
-    display: none;
-    position: absolute;
-    width: 100px;
-    top: -2rem;
-    left: 30%;
-    margin-left: -50px;
-    z-index: 1260;
-}
-
-
-
 .main-wrapper {
-    @include hide-scroll-bar;
-    overflow: scroll;
-    height: 100%;
-    z-index: 20;
-    position: relative;
-    top: 0;
-    margin: auto;
-    width: 80%;
-    border-radius: 0.1rem;
-    box-sizing: border-box;
-    background: {
-        color: $main-bg;
-    }
-    border: 1rem solid $main-border-bg;
-
+    height: 100%;    
     @media screen and (max-width: $media-sm) {
-        border: none;
-        width: 100%;
-        background: none;
-        box-shadow: none;
-
+        
         .slide {
             display: none;
         }
@@ -114,13 +70,14 @@ body {
     @media screen and (min-width: $media-sm) and (max-width: $media-md) {
         
     }
-
+    
     @media screen and (max-width: $media-sm) and (max-width: $media-lg) {
         
     }
 }
 
-.article-wrapper {
+.article-wrapper {    
+    @include hide-scroll-bar;
     position: absolute;
     box-sizing: border-box;
     width: 100%;
@@ -129,6 +86,8 @@ body {
     transition: all 700ms;
     padding: 0 1rem;
     will-change: transform;
+
+    
 
     &.c {
         transform: translate(0, -100%);
@@ -177,11 +136,15 @@ body {
     position: relative;
     z-index: 100;
     height: 100%;
-    border-radius: 1rem;
     float: left;
     box-sizing: border-box;
-    box-shadow: 0 0 20px $main-bg inset;
+    //box-shadow: 0 1rem 15px rgba(0, 0, 0, 0.8);;
     overflow: hidden;
+
+    @media screen and (min-width: $media-md) {
+        margin: auto 3%;
+        width: 59%;
+    }
     
     .article {
         background-color: $article-bg;
@@ -191,30 +154,11 @@ body {
         width: 100%;
         margin-top: 1rem;
         border-radius: 0.5rem;
-        box-shadow: 3px 0 10px rgba(100, 100, 100, 1);
+        box-shadow: 3px 0 10px rgba(100, 100, 100, 0.8);
         transition: all;
         min-height: 80%;
         
-        /* &:before, &:after { */
-        /*     position: absolute; */
-        /*     content: ''; */
-        /*     display: block; */
-        /*     opacity: 0.4; */
-        /*     box-sizing: border-box; */
-        /*     height: 100%; */
-        /*     width: 1rem; */
-        /*     background-color: $main-bg; */
-        /* } */
-
-        /* &:before { */
-        /*     top: 0rem; */
-        /*     left: -1.05rem ; */
-        /* } */
-
-        /* &:after { */
-        /*     top: 0rem; */
-        /*     right: -1.05rem ; */
-        /* } */
+        
        
         h1 {
             margin: -0.2rem auto 0.5rem;
@@ -248,70 +192,4 @@ body {
         display: none;
     }
 }
-
-$category-tag-height: 1.4rem;
-$category-tag-color: white;
-.slide {
-    display: inline-block;
-    float: left;
-    width: 35%;
-    .avator {
-        margin-top: 1.5rem;
-        box-sizing: border-box;
-
-        &:hover {
-            img {
-                transform: scale(0.8, 0.8);
-            }
-        }
-        
-        img {
-            width: 80%;
-            display: block;
-            margin: 0 auto;
-            transition: transform 300ms ease-in;
-            transform: scale(1, 1);
-            border-radius: 50%;
-            
-        }
-    }
-
-    ul {
-        @include clearfix;
-        margin: 1rem 0;
-        padding: 0;
-    }
-
-    li {
-        margin: 5px 10px;
-        display: block;
-        float: left;
-
-        a {
-            display: inline-block;
-            background-color: $category-tag-color;
-            height: $category-tag-height;
-            line-height: $category-tag-height;
-            position: relative;
-            padding-left: 0.4rem;
-            
-            &:after {
-                position: absolute;
-                left: 100%;
-                top: 0;
-                content: '';
-                width: 0;
-                height: 0;
-                display: block;
-                border: {
-                    style: solid;
-                    width: $category-tag-height / 1.9 0 $category-tag-height / 1.9 $category-tag-height / 1.90;
-                    color: transparent transparent transparent $category-tag-color;
-                }
-
-            }
-        }
-    }
-}
-
 

@@ -17,7 +17,8 @@
   src: url("/static/font/yuesong.TTF"); }
 
 html {
-  background-color: #3B3E43; }
+  background-color: #3B3E43;
+  height: 100%; }
 
 a, button, input, textarea {
   -webkit-tap-highlight-color: transparent; }
@@ -76,7 +77,8 @@ footer {
     height: 100px;
     border-radius: 50%; }
   footer p {
-    display: inline-block; }
+    display: inline-block;
+    margin: 0; }
   footer ul {
     padding: 0;
     margin: 0;
@@ -138,6 +140,9 @@ footer {
   .footer-avator--author {
     color: #333;
     margin: 0 auto; }
+  @media screen and (max-width: 768px) {
+    .footer-avator img {
+      width: 7.5rem; } }
 
 code.hljs {
   margin: 0.2rem 1rem;
@@ -160,11 +165,17 @@ code.hljs {
       opacity: 0.9;
       font-size: 0.5rem; } }
 
+/* org */
 .slide-tag {
   position: absolute;
   left: 5%;
   z-index: 1;
   margin-top: 2rem; }
+  .slide-tag:before, .slide-tag:after {
+    content: " ";
+    display: table; }
+  .slide-tag:after {
+    clear: both; }
   .slide-tag.slide-tag-index .index {
     display: none; }
   .slide-tag ul {
@@ -197,7 +208,7 @@ body {
   padding: 0 1rem;
   box-sizing: border-box; }
   body::-webkit-scrollbar {
-    width: 0; }
+    display: none; }
 
 .main {
   position: relative;
@@ -237,6 +248,8 @@ body {
   /* Adds a hyphen where the word breaks, if supported (No Blink) */
   hyphens: auto;
   position: relative; }
+  .article::-webkit-scrollbar {
+    display: none; }
   .article h1.title {
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     color: #373a3f; }

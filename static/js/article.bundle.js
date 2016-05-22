@@ -59,6 +59,7 @@
 	FontFaceOnload("YueSong", {
 	    success: function success() {
 	        setTimeout(function () {
+
 	            window.document.body.className += 'yue-song-font';
 	        });
 	    }

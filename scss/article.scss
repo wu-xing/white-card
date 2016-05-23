@@ -8,13 +8,12 @@
 @import "./widget/slide-tag";
 
 body {
-    @include hide-scroll-bar;
-    padding: 0 1rem;
-    box-sizing: border-box;
+    padding: 0 1rem;    
 }
 
 .main {
     @include clearfix;
+    
     position: relative;
     max-width: 1420px;
     margin: 0 auto;

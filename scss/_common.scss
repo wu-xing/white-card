@@ -14,11 +14,15 @@ a, button, input, textarea{
 
 body {
     @include clearfix;
+    @include hide-scroll-bar;
     position: relative;
     background: {
         image: url(/static/img/body-navy.jpg);
     }
+    box-sizing: border-box;
 }
+
+
 
 html {
     min-height: 100%;

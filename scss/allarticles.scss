@@ -15,12 +15,15 @@ body {
 
 
 
+
 .yue-song-font .main-wrapper h1 {
     font-family: $font-title;
 }
 
 
 .main-wrapper {
+    @include clearfix;
+    position: relative;
     padding: 0 1rem 1rem;
     margin-bottom: 1rem;
     h1 {

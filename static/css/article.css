@@ -25,12 +25,15 @@ a, button, input, textarea {
 
 body {
   position: relative;
-  background-image: url(/static/img/body-navy.jpg); }
+  background-image: url(/static/img/body-navy.jpg);
+  box-sizing: border-box; }
   body:before, body:after {
     content: " ";
     display: table; }
   body:after {
     clear: both; }
+  body::-webkit-scrollbar {
+    display: none; }
 
 html {
   min-height: 100%; }
@@ -209,10 +212,7 @@ code.hljs {
       display: none; } }
 
 body {
-  padding: 0 1rem;
-  box-sizing: border-box; }
-  body::-webkit-scrollbar {
-    display: none; }
+  padding: 0 1rem; }
 
 .main {
   position: relative;

@@ -9,12 +9,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="cleartype" content="on">
     
-    
-    <link rel="stylesheet" href="css/main.css">
+    <%- include('widget/head.ejs'); %>
+    <link rel="stylesheet" href="/static/css/categorylist.css">
     
   </head>
   <body>
-    
-    
+
+    <%- include('widget/slide-tag.ejs', {type: 'slide-tag-index'}); %>
+    <div class="main-wrapper">
+      <h1><%=LANG.category%></h1>
+
+      <ul class="categorys">
+        <% categorys.forEach(function(category, i){ %>
+        <li>
+          <a href="<%= category.indexUrl %>"><span><%= category.name %></span><span class="number"><%= category.number %></span></a>
+        </li>
+        <% }); %>  
+      </ul>
+      
+      
+      <br/>
+      <%- include('widget/footer.ejs', {type: 'footer-allarticles'}); %>
+    </div>
+
+    <script src="/static/js/categorylist.bundle.js"></script>
   </body>
 </html>

@@ -103,109 +103,6 @@ a {
       display: none; } }
 
 /* org */
-.yue-song-font .article-list h2 {
-  font-family: AveriaSansLibre, YueSong, sans-serif; }
-
-.article-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  width: 100%; }
-  .article-list:before, .article-list:after {
-    content: " ";
-    display: table; }
-  .article-list:after {
-    clear: both; }
-  .article-list li {
-    padding: 0.4rem;
-    margin: 1%;
-    box-shadow: 0 0 12px black;
-    background-color: white;
-    width: 23%;
-    height: 18rem;
-    float: left;
-    overflow: hidden;
-    border-radius: 7px;
-    box-sizing: border-box;
-    padding: 0.5rem;
-    position: relative;
-    /* &:before { */
-    /*     content: ''; */
-    /*     display: block; */
-    /*     position: absolute; */
-    /*     height: 1rem; */
-    /*     width: 1rem; */
-    /*     background-color: black; */
-    /*     left: 50%; */
-    /*     margin-left: -0.5rem; */
-    /*     top: 0.1rem; */
-    /*     z-index: 10; */
-    /*     border-radius: 50%; */
-    /*     opacity: 0.1; */
-    /* } */ }
-    .article-list li::-webkit-scrollbar {
-      display: none; }
-    .article-list li h2 {
-      margin: 0.2rem auto;
-      font-size: 1rem; }
-    .article-list li p {
-      margin: 0.2rem auto;
-      width: 100%;
-      font-size: 0.9rem;
-      line-height: 1.2; }
-    .article-list li .hr {
-      margin: 0.3rem auto 0.5rem; }
-    .article-list li .show-time {
-      font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
-      font-size: 9px;
-      line-height: 1.5;
-      color: #777; }
-  @media screen and (max-width: 1200px) {
-    .article-list li {
-      width: 31%; } }
-  @media screen and (max-width: 768px) {
-    .article-list li {
-      margin: 2%;
-      width: 46%;
-      box-shadow: none;
-      height: auto; } }
-  @media screen and (max-width: 400px) {
-    .article-list li {
-      margin: 5%;
-      width: 90%;
-      height: auto; } }
-
-.paging {
-  list-style: none;
-  position: relative;
-  padding: 0;
-  margin: 5px auto 15px;
-  text-align: center; }
-  .paging:before, .paging:after {
-    content: " ";
-    display: table; }
-  .paging:after {
-    clear: both; }
-  .paging--number {
-    display: inline-block;
-    text-align: center;
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    border-radius: 3px;
-    box-shadow: 0px 2px 14px #555;
-    background-color: #eee; }
-    .paging--number a {
-      font-weight: 700;
-      color: black;
-      display: block;
-      height: 100%;
-      width: 100%; }
-    .paging--number.active {
-      box-shadow: inset 0px 0px 7px #555; }
-
-/* org */
 @keyframes bounce {
   from {
     transform: translate(0, 0); }
@@ -323,18 +220,44 @@ body:before, body:after {
 body:after {
   clear: both; }
 
-.yue-song-font .main-wrapper h1 {
+.yue-song-font .main-wrapper h1, .yue-song-font ul.categorys li a {
   font-family: AveriaSansLibre, YueSong, sans-serif; }
 
 .main-wrapper {
-  position: relative;
   padding: 0 1rem 1rem;
   margin-bottom: 1rem; }
-  .main-wrapper:before, .main-wrapper:after {
-    content: " ";
-    display: table; }
-  .main-wrapper:after {
-    clear: both; }
   .main-wrapper h1 {
+    text-align: center;
     color: white;
     text-shadow: 0 0 1px white; }
+
+ul.categorys {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  ul.categorys li {
+    background-color: white;
+    box-shadow: 0 0 18px black;
+    border-radius: 0.6rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    position: relative;
+    margin: 1rem 15%; }
+    @media screen and (max-width: 768px) {
+      ul.categorys li {
+        margin: 1rem 1%; } }
+    ul.categorys li a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      vertical-align: middle; }
+    ul.categorys li span.number {
+      display: inline-block;
+      height: 1.2rem;
+      width: 1.2rem;
+      border-radius: 50%;
+      background-color: #ddd;
+      text-align: center;
+      line-height: 1.2rem;
+      margin-left: 0.3rem; }

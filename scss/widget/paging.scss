@@ -27,6 +27,9 @@ $paging-number-active-bg: #ee5b33;
         a {
             font-weight: 700;
             color: black;
+            display: block;
+            height: 100%;
+            width: 100%;
         }
         
         &.active {

@@ -24,7 +24,6 @@ body {
 
 .main-wrapper {
     @include hide-scroll-bar;
-
     overflow: scroll;
     z-index: 20;
     position: relative;
@@ -39,7 +38,7 @@ body {
 
     
     @media screen and (max-width: 1350px) {
-        width: 95%;
+        width: 90%;
     }
 
     

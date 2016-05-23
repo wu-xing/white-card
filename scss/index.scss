@@ -32,9 +32,19 @@ html, body {
 }
 
 .main-wrapper {
-    height: 100%;    
-    @media screen and (max-width: $media-sm) {
-        
+    height: 100%;
+
+    @media screen and (max-width: $media-md) {
+        .articles {
+            width: 64%;
+        }
+
+        .category-slide {
+            width: 30%;
+        }
+    }
+    
+    @media screen and (max-width: $media-sm) {        
         .slide {
             display: none;
         }
@@ -58,7 +68,8 @@ html, body {
         .articles {
             width: 100%;
             box-shadow: 0px 0px 0px #fff;
-
+            margin: 0;
+            
             .article {
                 //box-shadow: 0px 0 2px #646464;
                 box-shadow: none;
@@ -66,6 +77,8 @@ html, body {
             }
         }
     }
+
+    
 
     @media screen and (min-width: $media-sm) and (max-width: $media-md) {
         
@@ -84,7 +97,6 @@ html, body {
     height: 100%;
     transform: translate(0, 0);
     transition: all 700ms;
-    padding: 0 1rem;
     will-change: transform;
 
     
@@ -128,23 +140,21 @@ html, body {
     }
 }
 
-
 .articles {
     @include clearfix;
-    width: 65%;
+    margin: auto 3%;
+    width: 59%;
     display: inline-block;
     position: relative;
     z-index: 100;
     height: 100%;
     float: left;
     box-sizing: border-box;
-    //box-shadow: 0 1rem 15px rgba(0, 0, 0, 0.8);;
+    box-shadow: 0 1rem 18px #000;
     overflow: hidden;
-
-    @media screen and (min-width: $media-md) {
-        margin: auto 3%;
-        width: 59%;
-    }
+    border-radius: 0.5rem;
+    
+    
     
     .article {
         background-color: $article-bg;
@@ -157,8 +167,7 @@ html, body {
         box-shadow: 3px 0 10px rgba(100, 100, 100, 0.8);
         transition: all;
         min-height: 80%;
-        
-        
+        box-sizing: border-box;
        
         h1 {
             margin: -0.2rem auto 0.5rem;

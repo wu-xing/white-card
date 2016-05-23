@@ -59,7 +59,8 @@ a {
 /* org */
 .slide-tag {
   position: absolute;
-  left: 5%;
+  left: 50%;
+  margin-left: -570px;
   z-index: 1;
   margin-top: 2rem; }
   .slide-tag:before, .slide-tag:after {
@@ -67,6 +68,9 @@ a {
     display: table; }
   .slide-tag:after {
     clear: both; }
+  @media screen and (max-width: 1350px) {
+    .slide-tag {
+      margin-left: -45%; } }
   .slide-tag.slide-tag-index .index {
     display: none; }
   .slide-tag ul {
@@ -290,7 +294,7 @@ body {
   position: relative;
   top: 0;
   margin: auto;
-  width: 1240px;
+  width: 1040px;
   border-radius: 0.8rem;
   box-sizing: border-box;
   box-shadow: 0 0 18px #000; }
@@ -298,7 +302,7 @@ body {
     display: none; }
   @media screen and (max-width: 1350px) {
     .main-wrapper {
-      width: 95%; } }
+      width: 90%; } }
   @media screen and (max-width: 768px) {
     .main-wrapper {
       border: none;
@@ -312,9 +316,6 @@ body:before, body:after {
 
 body:after {
   clear: both; }
-
-.slide-tag {
-  left: 10%; }
 
 .yue-song-font .main-wrapper h1 {
   font-family: AveriaSansLibre, YueSong, sans-serif; }

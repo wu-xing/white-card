@@ -3,22 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title><%= title %></title>
-        <meta name="description" content="">
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="cleartype" content="on">
+        
+        <%- include('widget/head.ejs'); %>
+        
 
-        <link rel="stylesheet" href="/static/css/lib/normalize.css">
         <link rel="stylesheet" href="/static/css/allarticles.css">
-        <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+
     </head>
     <body>
-      <div class="slide-tag">
-        <ul>
-          <li><a href="/page/1/index.html">所有文章</a></li>
-        </ul>
-      </div>
+      <%- include('widget/slide-tag.ejs', {type: 'slide-tag-index'}); %>
 
       <div class="main-wrapper">
         <h1>所有文章:</h1>

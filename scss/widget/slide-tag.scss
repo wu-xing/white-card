@@ -7,20 +7,28 @@ $tag-size: 2rem;
 
 $tag-color: black;
 
+$tag-offset-border: 50px;
 
 .slide-tag {
     @include clearfix;
+    position: absolute;
+    left: 50%;
+    margin-left: - $main-max-width / 2 - $tag-offset-border;
+    z-index: 1;
+    margin-top: 2rem;
+
+    
+    @media screen and (max-width: 1350px) {
+        margin-left: -45%;
+    }
+    
     &.slide-tag-index {
         .index {
             display: none;
         }
     }
     
-    position: absolute;
-    left: 5%;
-    z-index: 1;
-    margin-top: 2rem;
-    
+        
     ul {
         margin: 0;
         padding: 0;

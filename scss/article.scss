@@ -50,7 +50,7 @@ body {
 
 .article {
     @include dont-break-out;
-    @include hide-scroll-bar;
+    
     position: relative;
 
     

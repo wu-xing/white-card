@@ -1,104 +1,86 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <title><%= title %></title>
-        <meta name="description" content="">
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,uc-fitscreen=no" />
-        
-        <meta name="screen-orientation" content="portrait">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="full-screen" content="yes">
-        <meta name="layoutmode" content="fitscreen">
-        <meta name="nightmode" content="enable">
-        <meta http-equiv="cleartype" content="on">
-        <meta name="imagemode" content="force">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    
+    <%- include('widget/head.ejs'); %>
+    
+    <link rel="stylesheet" href="/static/css/hl-styles/monokai-sublime.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    
+  </head>
+  <body>
 
-        <meta name="x5-orientation" content="portrait">
-        <meta name="x5-fullscreen" content="true">
-        <meta name="x5-page-mode" content="app">
-        
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <!-- <div class="main"> -->
+    
+    
 
-        <link rel="stylesheet" href="/static/css/lib/normalize.css">
-        <link rel="stylesheet" href="/static/css/hl-styles/monokai-sublime.css">
-        <link rel="stylesheet" href="/static/css/index.css">
-        <link rel="stylesheet" href="/static/css/font-awesome.min.css">
-    </head>
-    <body>
+    <%- include('widget/slide-tag.ejs', {type: 'slide-tag-index'}); %>
+    
+    <div class="main-wrapper">
 
-      
-      
-      <!-- <div class="main"> -->
-      
-        
+      <!-- articles -->
+      <div class="articles">
 
-        <%- include('widget/slide-tag.ejs', {type: 'slide-tag-index'}); %>
-        
-        <div class="main-wrapper">
-
-          <!-- articles -->
-          <div class="articles">
-
-            <% articles.forEach(function(article, i){ %>
-            <div class="article-wrapper" style="top: <%= i * 2.5 %>rem" data-top="<%= i  * 2.5 %>rem">
-              <article class="article <%= article.type %>" >
-                <h1><%= article.title %></h1>
-                <span class="show-time"><%= article.showTime %></span>
-                <span class="readmore"><a href="<%= article.outputUrl %>"><%- LANG.readmore %></a></span>
-                <!-- <h5 class="article--title"><a href='/<%- article.outputfilename %>'><%= article.title %></a></h5> -->
-              <!-- <p class="article--create-date"><%- article.showTime %></p> -->
-              <div class="article--content-part"><%- article.content  %></div>
-            </article>
-            </div>
-          <% }); %>     
-          <div class="article-wrapper cover"  style="top: <%= articles.length * 2.5 %>rem" data-top="<%= articles.length  * 2.5 %>rem">
-            <div class="article">
-              <canvas id="article-canvas"></canvas>
-            </div>
-          </div>
-
-            
-          </div>
-          <!-- articles end-->
-
-          <div class="slide">
-            
-            <div class="avator">
-              <img alt="" src="<%= IMG.FOOTER_AVATOR %>"/>
-            </div>
-
-            <ul>
-              
-              <% categorys.forEach(function(category, i){ %>
-              <li>
-                <a href="<%= category.indexUrl %>"><%= category.name %>(<%= category.number %>)</a>
-              </li>
-              <% }); %>     
-              
-              
-            </ul>
-            
-          </div>
-        
+        <% articles.forEach(function(article, i){ %>
+        <div class="article-wrapper" style="top: <%= i * 2.5 %>rem" data-top="<%= i  * 2.5 %>rem">
+          <article class="article <%= article.type %>" >
+            <h1><%= article.title %></h1>
+            <span class="show-time"><%= article.showTime %></span>
+            <span class="readmore"><a href="<%= article.outputUrl %>"><%- LANG.readmore %></a></span>
+            <!-- <h5 class="article--title"><a href='/<%- article.outputfilename %>'><%= article.title %></a></h5> -->
+            <!-- <p class="article--create-date"><%- article.showTime %></p> -->
+            <div class="article--content-part"><%- article.content  %></div>
+          </article>
         </div>
-        <!-- </div> -->
-        
+        <% }); %>     
+        <div class="article-wrapper cover"  style="top: <%= articles.length * 2.5 %>rem" data-top="<%= articles.length  * 2.5 %>rem">
+          <div class="article">
+            <canvas id="article-canvas"></canvas>
+          </div>
+        </div>
 
         
-      <!-- <footer> -->
+      </div>
+      <!-- articles end-->
 
+      <div class="category-slide">
+        
+        <div class="avator">
+          <img alt="" src="<%= IMG.FOOTER_AVATOR %>"/>
+        </div>
+
+        <ul>
           
-      <!--   </footer> -->
+          <% categorys.forEach(function(category, i){ %>
+          <li>
+            <a href="<%= category.indexUrl %>"><%= category.name %>(<%= category.number %>)</a>
+          </li>
+          <% }); %>     
+          
+          
+        </ul>
         
+      </div>
+      
+    </div>
+    <!-- </div> -->
+    
 
-        
-      <script src="/static/js/index.bundle.js"></script>
-      <script src="/static/js/highlight.pack.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script>
-    </body>
+    
+    <!-- <footer> -->
+
+    
+    <!--   </footer> -->
+    
+
+    
+    <script src="/static/js/index.bundle.js"></script>
+    <script src="/static/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
 </html>
 

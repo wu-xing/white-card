@@ -290,7 +290,7 @@ body {
         top: 50%;
         margin-top: -3px;
         left: 4px; }
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 992px), screen and (max-height: 900px) {
     .category-slide li {
       margin: 10px 8px; }
       .category-slide li a {

@@ -64,8 +64,8 @@ a {
   position: absolute;
   left: 50%;
   margin-left: -570px;
-  z-index: 1;
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  z-index: 100; }
   .slide-tag:before, .slide-tag:after {
     content: " ";
     display: table; }
@@ -80,27 +80,50 @@ a {
     margin: 0;
     padding: 0;
     list-style: none; }
-    .slide-tag ul li {
-      margin-top: 1rem;
-      display: block;
+  .slide-tag li, .slide-tag .toggle-button {
+    margin-top: 1rem;
+    display: block;
+    height: 2rem;
+    max-width: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 1px 13px #000;
+    transition: all 300ms ease-in-out;
+    background-color: white;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    -webkit-font-smoothing: antialiased; }
+    .slide-tag li span, .slide-tag .toggle-button span {
+      font-size: 0.8rem;
+      padding-right: 1rem; }
+    .slide-tag li a, .slide-tag .toggle-button a {
+      background-color: white;
+      position: relative;
+      display: inline-block;
       height: 2rem;
       width: 2rem;
-      position: relative;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 1px 1px 13px #000; }
-      .slide-tag ul li a {
-        background-color: white;
-        position: relative;
-        display: block;
-        height: 100%;
-        width: 100%;
-        line-height: 2rem;
-        text-align: center;
-        color: black; }
+      line-height: 2rem;
+      text-align: center;
+      color: black;
+      border-radius: 50%; }
+    .slide-tag li:hover, .slide-tag .toggle-button:hover {
+      max-width: 10rem; }
+  .slide-tag .toggle-button {
+    display: none; }
+    .slide-tag .toggle-button.left {
+      left: 2rem; }
+    .slide-tag .toggle-button.right {
+      right: 2rem; }
   @media screen and (max-width: 768px) {
     .slide-tag {
-      display: none; } }
+      display: none;
+      position: fixed; }
+      .slide-tag .toggle-button {
+        display: block; }
+      .slide-tag ul li {
+        display: none; } }
 
 /* org */
 .yue-song-font .article-list h2 {

@@ -33,8 +33,9 @@ html, body {
 
 .main-wrapper {
     height: 100%;
-
+    
     @media screen and (max-width: $media-md) {
+        border-radius: 0;
         .articles {
             width: 64%;
         }
@@ -45,8 +46,8 @@ html, body {
     }
     
     @media screen and (max-width: $media-sm) {        
-        .slide {
-            display: none;
+        .category-slide {
+            display: none !important;
         }
 
         .article-wrapper {
@@ -152,9 +153,13 @@ html, body {
     box-sizing: border-box;
     box-shadow: 0 1rem 18px #000;
     overflow: hidden;
-    border-radius: 0.5rem;
-    
-    
+    border: {
+        top: {
+            right-radius: 0.5rem;
+            left-radius: 0.5rem;
+        }
+    }
+
     
     .article {
         background-color: $article-bg;

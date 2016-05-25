@@ -14,8 +14,8 @@ $tag-offset-border: 50px;
     position: absolute;
     left: 50%;
     margin-left: - $main-max-width / 2 - $tag-offset-border;
-    z-index: 1;
     margin-top: 2rem;
+    z-index: 100;
 
     
     @media screen and (max-width: 1350px) {
@@ -32,35 +32,81 @@ $tag-offset-border: 50px;
     ul {
         margin: 0;
         padding: 0;
-        list-style: none;
+        list-style: none;        
+    }
 
-        li {
+    li, .toggle-button {
             margin-top: 1rem;
             display: block;
             height: $tag-size;
-            width: $tag-size;
+            max-width: $tag-size;
             position: relative;
-            border-radius: 50%;
             overflow: hidden;
             box-shadow: 1px 1px 13px #000;
+            transition: all 300ms ease-in-out;
+            background-color: $tag-bg;
+            border: {
+                top: {
+                    right-radius: $tag-size / 2;
+                    left-radius: $tag-size / 2;
+                }
+                bottom: {
+                    right-radius: $tag-size / 2;
+                    left-radius: $tag-size / 2;
+                }
+            }
+            -webkit-font-smoothing: antialiased;
+
+            span {
+                font: {
+                    size: 0.8rem;
+                }
+                padding-right: 1rem;
+            }
             
             a {
                 background-color: $tag-bg;
                 position: relative;
-                display: block;
-                height: 100%;
-                width: 100%;
+                display: inline-block;
+                height: $tag-size;
+                width: $tag-size;
                 line-height: $tag-size;
                 text-align: center;
                 color: $tag-color;
+                border-radius: 50%;
             }
 
-            
+            &:hover {
+                max-width: 10rem;;
+            }
+        }
+    
+    .toggle-button {
+        display: none;
+
+        &.left {
+            left: 2rem;
+        }
+
+        &.right {
+            right: 2rem;
         }
     }
 
     @media screen and (max-width: $media-sm) {
         display: none;
+        position: fixed;
+        
+        .toggle-button {
+            display: block;
+        }
+
+        ul {
+            li {
+                display: none;
+            }
+        }
+        
     }
 
     @media screen and (min-width: $media-sm) and (max-width: $media-md) {

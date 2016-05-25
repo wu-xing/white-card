@@ -1,4 +1,5 @@
 'use strict';
-require('./widget/font.js');
+require('./widget/font');
+require('./widget/slide-button');
 
 

@@ -109,41 +109,96 @@
 	    };
 
 	    var slideTags = document.querySelector('.slide-tag');
-	    slideTags.classList.add('left');
+
 	    window.addEventListener('resize', getWidth);
 
+	    slideTags.classList.add('left');
+
+	    var isLeft = true;
+
 	    window.document.body.addEventListener('touchstart', function (e) {
-	        console.log(e);
+	        disableButtons();
+	        //showToggleButton();
 	        var x = e.changedTouches[0].clientX;
 
 	        if (x < halfWidth) {
 	            slideTags.classList.remove('right');
 	            slideTags.classList.add('left');
+	            isLeft = true;
 	        } else {
 	            slideTags.classList.remove('left');
 	            slideTags.classList.add('right');
+	            isLeft = false;
 	        }
+
+	        setTimeout(function () {
+	            //hideToggleButton();
+	        }, 1000);
 	    });
 
-	    // let lis = slideTags.querySelectorAll('ul li');
-	    // lis = Array.prototype.slice.apply(lis);
-	    // console.log("lis = ", lis);
+	    var lis = slideTags.querySelectorAll('ul li');
+	    lis = Array.prototype.slice.apply(lis);
 
-	    // let len = lis.length;
+	    var len = lis.length;
 
-	    // let angleUnit = 90 / len;
+	    var angleUnit = 90 / (len - 1);
 
-	    // let base = 2;
-	    // lis.forEach((e, i) => {
+	    var deg = Math.PI / 180;
 
-	    //     let angle = i * angleUnit;
-	    //     let x = - base * Math.sin(angle),
-	    //         y = - base * Math.cos(angle);
+	    var base = 7;
 
-	    //     let translateStr = `translate3d(${x}rem, ${y}rem, 0))`;
+	    var toggleButton = slideTags.querySelector('.toggle-button');
 
-	    //     e.style.transform = translateStr;
-	    // });
+	    function enableButtons() {
+	        lis.forEach(function (e) {
+	            e.style.display = 'block';
+	        });
+	    }
+
+	    function disableButtons() {
+	        lis.forEach(function (e) {
+	            e.style.display = 'none';
+	        });
+	    }
+
+	    function hideToggleButton() {
+	        toggleButton.classList.add('hide');
+	    }
+
+	    function showToggleButton() {
+	        toggleButton.classList.remove('hide');
+	    }
+
+	    var isToggle = false;
+	    toggleButton.addEventListener('click', function (event) {
+	        enableButtons();
+	        isToggle = true;
+	        lis.forEach(function (e, i) {
+	            var angle = i * angleUnit * deg;
+
+	            var x = (base * Math.cos(angle) * (isLeft ? 1 : -1)).toFixed(6),
+	                y = (-base * Math.sin(angle)).toFixed(6);
+
+	            var translateStr = 'translate3d(' + x + 'rem, ' + y + 'rem, 0)';
+
+	            e.classList.add('active');
+	            setTimeout(function () {
+	                e.style.transform = translateStr;
+	            });
+	        });
+	    });
+
+	    var toggleHide = function toggleHide() {
+	        lis.forEach(function (e, i) {
+	            e.classList.remove('active');
+	            e.style.transform = '';
+	        });
+	        isToggle = false;
+	    };
+
+	    window.document.body.addEventListener('touchstart', function (e) {
+	        isToggle && toggleHide();
+	    });
 	};
 
 	main();

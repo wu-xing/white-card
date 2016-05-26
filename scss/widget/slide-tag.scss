@@ -9,6 +9,17 @@ $tag-color: black;
 
 $tag-offset-border: 50px;
 
+
+@keyframes opacity-hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
 .slide-tag {
     @include clearfix;
     position: absolute;
@@ -95,6 +106,10 @@ $tag-offset-border: 50px;
     .toggle-button {
         display: none;
 
+        &.hide {
+            animation: opacity-hide 300ms ease-in-out;
+            animation-fill-mode: forwards;
+        }
         
     }
 
@@ -107,6 +122,7 @@ $tag-offset-border: 50px;
         
         .toggle-button {
             display: block;
+            z-index: 100;
         }
 
         ul {
@@ -118,6 +134,12 @@ $tag-offset-border: 50px;
                 position: absolute;
                 top: 0;
                 left: 0;
+                z-index: 1;
+                box-shadow: none;
+
+                &.active {
+                    box-shadow: 1px 1px 13px #000;
+                }
             }
         }
         

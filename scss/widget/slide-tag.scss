@@ -80,30 +80,44 @@ $tag-offset-border: 50px;
                 max-width: 10rem;;
             }
         }
+
+
+    &.left {
+        display: block;
+        left: 2rem;
+    }
+
+    &.right {
+        display: block;
+        right: 2rem;
+    }
     
     .toggle-button {
         display: none;
 
-        &.left {
-            left: 2rem;
-        }
-
-        &.right {
-            right: 2rem;
-        }
+        
     }
 
     @media screen and (max-width: $media-sm) {
-        display: none;
         position: fixed;
+        left: auto;
+        margin: auto;
+        bottom: 2rem;
+        display: none;
         
         .toggle-button {
             display: block;
         }
 
         ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            
             li {
-                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
             }
         }
         

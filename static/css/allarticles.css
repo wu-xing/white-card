@@ -110,20 +110,31 @@ a {
       border-radius: 50%; }
     .slide-tag li:hover, .slide-tag .toggle-button:hover {
       max-width: 10rem; }
+  .slide-tag.left {
+    display: block;
+    left: 2rem; }
+  .slide-tag.right {
+    display: block;
+    right: 2rem; }
   .slide-tag .toggle-button {
     display: none; }
-    .slide-tag .toggle-button.left {
-      left: 2rem; }
-    .slide-tag .toggle-button.right {
-      right: 2rem; }
   @media screen and (max-width: 768px) {
     .slide-tag {
-      display: none;
-      position: fixed; }
+      position: fixed;
+      left: auto;
+      margin: auto;
+      bottom: 2rem;
+      display: none; }
       .slide-tag .toggle-button {
         display: block; }
-      .slide-tag ul li {
-        display: none; } }
+      .slide-tag ul {
+        position: absolute;
+        top: 0;
+        left: 0; }
+        .slide-tag ul li {
+          position: absolute;
+          top: 0;
+          left: 0; } }
 
 /* org */
 .yue-song-font .article-list h2 {

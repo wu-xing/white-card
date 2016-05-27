@@ -11,30 +11,51 @@ let main = () => {
     
     window.addEventListener('resize', getWidth);
 
-    slideTags.classList.add('left');
+    slideTags.classList.add('hide');
 
     let isLeft = true;
 
-    
-    window.document.body.addEventListener('touchstart', (e) => {
-        disableButtons();
-        //showToggleButton();
+    var hideToggleButtonIdle;
+
+    let handleClick =  (e) => {
+        
         let x = e.changedTouches[0].clientX;
+        
+        slideTags.classList.remove('hide');
         
         if( x < halfWidth ){
             slideTags.classList.remove('right');
             slideTags.classList.add('left');
+
+            if( !isLeft ){
+                disableButtons();
+            }
+            
             isLeft = true;
         } else {
             slideTags.classList.remove('left');
             slideTags.classList.add('right');
+
+            if( isLeft ){
+                disableButtons();
+            }
+            
             isLeft = false;
         }
 
-        setTimeout(() => {
-            //hideToggleButton();
-        }, 1000);
-    });
+        if( hideToggleButtonIdle ){
+            clearTimeout(hideToggleButtonIdle);
+            hideToggleButtonIdle = null;
+        }
+
+        hideToggleButtonIdle = setTimeout(() => {
+
+            slideTags.classList.add('hide');
+        }, 2000);
+
+    };
+    
+    window.document.body.addEventListener('touchstart', handleClick);
 
     let lis = slideTags.querySelectorAll('ul li');
     lis = Array.prototype.slice.apply(lis);
@@ -69,8 +90,21 @@ let main = () => {
         toggleButton.classList.remove('hide');
     }
 
+    function toggleHide() {
+        lis.forEach((e, i) => {
+            e.classList.remove('active');
+            e.style.transform = '';
+        });
+        isToggle = false;
+    }
+    
     let isToggle = false;
     toggleButton.addEventListener('click', (event) => {
+
+        if( isToggle ){
+            return toggleHide();
+        }
+        
         enableButtons();
         isToggle = true;
         lis.forEach((e, i) => {
@@ -82,6 +116,7 @@ let main = () => {
             let translateStr = `translate3d(${x}rem, ${y}rem, 0)`;
 
             e.classList.add('active');
+            
             setTimeout(() => {
                 e.style.transform = translateStr;    
             });
@@ -89,15 +124,16 @@ let main = () => {
         });
     });
 
-    let toggleHide = () => {
-        lis.forEach((e, i) => {
-            e.classList.remove('active');
-            e.style.transform = '';
-        });
-        isToggle = false;
-    };
+    
 
     window.document.body.addEventListener('touchstart', (e) => {
+
+
+        if( Array.from(e.target.classList).indexOf('slide-button') >= 0 ||
+            Array.from(e.target.parentElement.classList).indexOf('slide-button') >= 0 ){
+            return;
+        }
+
         isToggle && toggleHide();
     });
 

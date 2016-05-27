@@ -180,7 +180,9 @@ code.hljs {
   left: 50%;
   margin-left: -570px;
   margin-top: 2rem;
-  z-index: 100; }
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 1000ms ease-in-out; }
   .slide-tag:before, .slide-tag:after {
     content: " ";
     display: table; }
@@ -233,9 +235,10 @@ code.hljs {
     right: 2rem; }
   .slide-tag .toggle-button {
     display: none; }
-    .slide-tag .toggle-button.hide {
-      animation: opacity-hide 300ms ease-in-out;
-      animation-fill-mode: forwards; }
+  .slide-tag.hide {
+    /* animation: opacity-hide 300ms ease-in-out; */
+    /* animation-fill-mode: forwards; */
+    opacity: 0; }
   @media screen and (max-width: 768px) {
     .slide-tag {
       position: fixed;

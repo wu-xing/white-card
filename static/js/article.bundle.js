@@ -112,29 +112,50 @@
 
 	    window.addEventListener('resize', getWidth);
 
-	    slideTags.classList.add('left');
+	    slideTags.classList.add('hide');
 
 	    var isLeft = true;
 
-	    window.document.body.addEventListener('touchstart', function (e) {
-	        disableButtons();
-	        //showToggleButton();
+	    var hideToggleButtonIdle;
+
+	    var handleClick = function handleClick(e) {
+
 	        var x = e.changedTouches[0].clientX;
+
+	        slideTags.classList.remove('hide');
 
 	        if (x < halfWidth) {
 	            slideTags.classList.remove('right');
 	            slideTags.classList.add('left');
+
+	            if (!isLeft) {
+	                disableButtons();
+	            }
+
 	            isLeft = true;
 	        } else {
 	            slideTags.classList.remove('left');
 	            slideTags.classList.add('right');
+
+	            if (isLeft) {
+	                disableButtons();
+	            }
+
 	            isLeft = false;
 	        }
 
-	        setTimeout(function () {
-	            //hideToggleButton();
-	        }, 1000);
-	    });
+	        if (hideToggleButtonIdle) {
+	            clearTimeout(hideToggleButtonIdle);
+	            hideToggleButtonIdle = null;
+	        }
+
+	        hideToggleButtonIdle = setTimeout(function () {
+
+	            slideTags.classList.add('hide');
+	        }, 2000);
+	    };
+
+	    window.document.body.addEventListener('touchstart', handleClick);
 
 	    var lis = slideTags.querySelectorAll('ul li');
 	    lis = Array.prototype.slice.apply(lis);
@@ -169,8 +190,21 @@
 	        toggleButton.classList.remove('hide');
 	    }
 
+	    function toggleHide() {
+	        lis.forEach(function (e, i) {
+	            e.classList.remove('active');
+	            e.style.transform = '';
+	        });
+	        isToggle = false;
+	    }
+
 	    var isToggle = false;
 	    toggleButton.addEventListener('click', function (event) {
+
+	        if (isToggle) {
+	            return toggleHide();
+	        }
+
 	        enableButtons();
 	        isToggle = true;
 	        lis.forEach(function (e, i) {
@@ -182,21 +216,19 @@
 	            var translateStr = 'translate3d(' + x + 'rem, ' + y + 'rem, 0)';
 
 	            e.classList.add('active');
+
 	            setTimeout(function () {
 	                e.style.transform = translateStr;
 	            });
 	        });
 	    });
 
-	    var toggleHide = function toggleHide() {
-	        lis.forEach(function (e, i) {
-	            e.classList.remove('active');
-	            e.style.transform = '';
-	        });
-	        isToggle = false;
-	    };
-
 	    window.document.body.addEventListener('touchstart', function (e) {
+
+	        if (Array.from(e.target.classList).indexOf('slide-button') >= 0 || Array.from(e.target.parentElement.classList).indexOf('slide-button') >= 0) {
+	            return;
+	        }
+
 	        isToggle && toggleHide();
 	    });
 	};

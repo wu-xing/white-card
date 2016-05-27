@@ -27,6 +27,8 @@ $tag-offset-border: 50px;
     margin-left: - $main-max-width / 2 - $tag-offset-border;
     margin-top: 2rem;
     z-index: 100;
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out;
 
     
     @media screen and (max-width: 1350px) {
@@ -105,12 +107,12 @@ $tag-offset-border: 50px;
     
     .toggle-button {
         display: none;
+    }
 
-        &.hide {
-            animation: opacity-hide 300ms ease-in-out;
-            animation-fill-mode: forwards;
-        }
-        
+    &.hide {
+        /* animation: opacity-hide 300ms ease-in-out; */
+        /* animation-fill-mode: forwards; */
+        opacity: 0;
     }
 
     @media screen and (max-width: $media-sm) {

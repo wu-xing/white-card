@@ -6,6 +6,8 @@ let winWidth = window.innerWidth,
 let checkAnable = () => {
     if( winWidth < 768 ){
         enable = true;
+    } else {
+        enable = false;
     }
 };
 

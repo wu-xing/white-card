@@ -18,6 +18,16 @@ $paging-number-active-bg: #ee5b33;
 $header-height: 0rem;
 $footer-height: 2rem;
 
+@keyframes bounce {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, -10px);
+    }
+}
+
+
 html, body {
     height: 100%;
 }
@@ -121,6 +131,7 @@ html, body {
     }
 
     &.active {
+        cursor: initial;
         z-index: 150;
         .article {
             box-shadow: 0 0 20px black;
@@ -130,16 +141,124 @@ html, body {
         }
     }
 
+    /* &.cover.active { */
+    /*     animation: none; */
+    /* } */
+
     &.cover {
         height: 100%;
+        //animation: bounce 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 200ms infinite;
+        
+
+        // FIXME 动画掉帧
+
+        .m-banner {
+            position: absolute;
+            background-color: #222528;
+            width: 100%;
+            bottom: 0;
+            color: white;
+            opacity: 0.7;
+            z-index: 10;
+
+            .footer-text {
+                text-align: right;
+            }
+
+            .story-text {
+                padding: 0 0.8rem;
+            }
+
+            @media screen and (max-width: $media-sm) {
+
+                font-size: 0.8rem;
+                
+            }
+
+            border: {
+                bottom: {
+                    left-radius: 0.3rem;
+                    right-radius: 0.3rem;
+                }
+            }
+        }
+        
+        .banner {
+            z-index: 10;
+            position: absolute;
+            background-color: #222528;
+            width: 100%;
+            top: 3rem;
+            padding: 2rem 1.5rem;
+            box-sizing: border-box;
+            color: white;
+            opacity: 0.7;
+            
+            p {
+                margin: 0;
+            }
+
+            &--title {
+                font: {
+                    family: $font-title;
+                    size: 2rem;
+                }
+            }
+
+            &--desc {
+                
+            }
+            
+        }
+        
+        .sqrt-title {
+            height: 5rem;
+            width: 5rem;
+            position: absolute;
+            top: 14rem;
+            left: 50%;
+            margin-left: -2rem;
+            border: 3px solid #000;
+            border-radius: 2px;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 120%;
+                height: 120%;
+                box-sizing: border-box;
+                left: -10%;
+                top: -10%;
+                border: 2px solid #000;
+                border-radius: 3px;
+            }
+            
+            p {
+                width: 50%;
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+                float: left;
+                line-height: 2.5rem;
+                vertical-align: middle;
+                text-align: center;
+                text-shadow: 0 0 5px white;
+                font: {
+                    size: 2rem;
+                    family: $font-title;
+                }
+            }
+        }
 
         .article {
             height: 95%;
+            padding: 0;
             background: {
-                image: url(/static/img/fish.jpg);
+                //image: url(/static/img/fish.jpg);
                 size: cover;
                 repeat: no-repeat;
-                position: center center;
+                position: center bottom;
             }
         }
     }

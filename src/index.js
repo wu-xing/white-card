@@ -4,10 +4,11 @@
 require('./widget/font');
 require('./widget/slide-button');
 require('./widget/index-scroll');
+require('./widget/tree');
 
 let $ = require('jquery');
 
-//require('./card-canvas');
+ 
 
 $.single = (function(o){
     var collection = $([1]); // Fill with 1 item, to make sure length === 1
@@ -29,6 +30,8 @@ var requestFullScreen = () => {
         body.msrequestFullscreen();
     }    
 };
+
+
 requestFullScreen();
 
 
@@ -60,6 +63,7 @@ let clicked = false;
 $('.article-wrapper').on('click', function(){
     let e = $(this);
     if( clicked ){
+        
         clicked = false;
         
         e.css('top', e.data('top')).css('overflow', 'hidden').css('z-index', 'auto').addClass('c').removeClass('active');
@@ -67,7 +71,7 @@ $('.article-wrapper').on('click', function(){
         $('.article-wrapper').map(function(){
             let ee = $(this);
             ee.css('top', ee.data('top'));
-            //ee.find('.article').css('overflow', 'hidden');
+
             ee[0].scrollTop = 0;
 
             if( screenWidth > mediaMap['sm'] ){

@@ -312,6 +312,10 @@ body {
   /* Adds a hyphen where the word breaks, if supported (No Blink) */
   hyphens: auto;
   position: relative; }
+  .article ul {
+    padding-left: 1rem; }
+  .article a {
+    line-height: 1; }
   .article h1.title {
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     color: #373a3f; }

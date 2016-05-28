@@ -14,6 +14,7 @@ $category-tag-color: white;
     .avator {
         margin-top: 1.5rem;
         box-sizing: border-box;
+        position: relative;
         
         &:hover {
             img {
@@ -27,8 +28,42 @@ $category-tag-color: white;
             margin: 0 auto;
             transition: transform 300ms ease-in;
             transform: scale(1, 1);
-            border-radius: 50%;
-            
+            border-radius: 50%;     
+        }
+
+        .card {
+            position: absolute;
+            top: 35%;
+            width: 100%;
+            text-align: center;
+        }
+
+        &--name {
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+            width: auto;
+            color: white;
+            font: {
+                size: 1.8rem;
+                family: $font-title;
+            }
+            text-shadow: 0 0 2px white;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background-color: rgba(100, 100, 100, 0.5);
+                -webkit-filter:blur(3px);
+                filter:blur(3px);
+                box-shadow: 0 0 3px rgba(100, 100, 100, 0.5);
+                z-index: -1;
+            }
         }
     }
 

@@ -1,7 +1,9 @@
 'use strict';
 
 //require('./radiation-header.js');
-require('./widget/font.js');
+require('./widget/font');
+require('./widget/slide-button');
+require('./widget/index-scroll');
 
 let $ = require('jquery');
 

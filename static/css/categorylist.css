@@ -264,6 +264,9 @@ body {
       background: none;
       box-shadow: none; } }
 
+html {
+  height: auto; }
+
 body:before, body:after {
   content: " ";
   display: table; }
@@ -298,6 +301,8 @@ ul.categorys {
     @media screen and (max-width: 768px) {
       ul.categorys li {
         margin: 1rem 1%; } }
+    ul.categorys li:hover span.number {
+      transform: scale(1.31, 1.31); }
     ul.categorys li a {
       display: block;
       height: 100%;
@@ -311,4 +316,5 @@ ul.categorys {
       background-color: #ddd;
       text-align: center;
       line-height: 1.2rem;
-      margin-left: 0.3rem; }
+      margin-left: 0.3rem;
+      transition: transform 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out; }

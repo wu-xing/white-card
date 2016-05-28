@@ -48,6 +48,7 @@
 
 	__webpack_require__(1);
 	__webpack_require__(6);
+	//require('./widget/index-scroll');
 
 /***/ },
 /* 1 */
@@ -101,7 +102,22 @@
 
 	'use strict';
 
+	var winWidth = window.innerWidth,
+	    enable = false;
+
+	var checkAnable = function checkAnable() {
+	    if (winWidth < 768) {
+	        enable = true;
+	    }
+	};
+
+	window.addEventListener('resize', function () {
+	    winWidth = window.innerWidth;
+	    checkAnable();
+	});
+
 	var main = function main() {
+
 	    var halfWidth = window.innerWidth / 2;
 
 	    var getWidth = function getWidth() {
@@ -112,13 +128,19 @@
 
 	    window.addEventListener('resize', getWidth);
 
-	    slideTags.classList.add('hide');
+	    if (enable) {
+	        slideTags.classList.add('hide');
+	    }
 
 	    var isLeft = true;
 
 	    var hideToggleButtonIdle;
 
 	    var handleClick = function handleClick(e) {
+
+	        if (!enable) {
+	            return;
+	        }
 
 	        var x = e.changedTouches[0].clientX;
 
@@ -201,6 +223,10 @@
 	    var isToggle = false;
 	    toggleButton.addEventListener('click', function (event) {
 
+	        if (!enable) {
+	            return;
+	        }
+
 	        if (isToggle) {
 	            return toggleHide();
 	        }
@@ -224,6 +250,10 @@
 	    });
 
 	    window.document.body.addEventListener('touchstart', function (e) {
+
+	        if (!enable) {
+	            return;
+	        }
 
 	        if (Array.from(e.target.classList).indexOf('slide-button') >= 0 || Array.from(e.target.parentElement.classList).indexOf('slide-button') >= 0) {
 	            return;

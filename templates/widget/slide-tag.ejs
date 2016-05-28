@@ -4,9 +4,11 @@
   </div>
   
   <ul>
+    <% if (type !== 'slide-tag-index') {%>
     <li class="index" title="<%= LANG.index %>">
       <a href="/" class="slide-button"><i class="fa fa-home" aria-hidden="true"></i></a><span><%= LANG.index %></span>
     </li>
+    <% } %>
     <li title="<%= LANG.allarticle %>">
       <a href="/page/1/index.html" class="slide-button"><i class="fa fa-list-alt" aria-hidden="true"></i></a><span><%= LANG.allarticle %></span>
     </li>

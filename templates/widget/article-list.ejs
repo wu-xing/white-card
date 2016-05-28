@@ -10,6 +10,7 @@
   <% }); %>
   
 </ul>
+<% if(pageN > 1) { %>
 <ul class="paging">
   <% for(var i = 1; i <= pageN; i++) { %>
     
@@ -35,3 +36,4 @@
     <% } %>
   <% } %>
 </ul>
+<% } %>

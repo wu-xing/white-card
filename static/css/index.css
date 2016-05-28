@@ -291,7 +291,8 @@ body {
   width: 35%; }
   .category-slide .avator {
     margin-top: 1.5rem;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    position: relative; }
     .category-slide .avator:hover img {
       transform: scale(0.8, 0.8); }
     .category-slide .avator img {
@@ -301,6 +302,32 @@ body {
       transition: transform 300ms ease-in;
       transform: scale(1, 1);
       border-radius: 50%; }
+    .category-slide .avator .card {
+      position: absolute;
+      top: 35%;
+      width: 100%;
+      text-align: center; }
+    .category-slide .avator--name {
+      display: inline-block;
+      position: relative;
+      z-index: 10;
+      width: auto;
+      color: white;
+      font-size: 1.8rem;
+      font-family: AveriaSansLibre, YueSong, sans-serif;
+      text-shadow: 0 0 2px white; }
+      .category-slide .avator--name:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(100, 100, 100, 0.5);
+        filter: blur(3px);
+        box-shadow: 0 0 3px rgba(100, 100, 100, 0.5);
+        z-index: -1; }
   .category-slide ul {
     margin: 1rem 0;
     padding: 0; }
@@ -353,15 +380,15 @@ body {
 html, body {
   height: 100%; }
 
-#article-canvas {
-  height: 100%;
-  width: 100%; }
-
 .yue-song-font .articles .article h1 {
   font-family: AveriaSansLibre, YueSong, sans-serif; }
 
 .main-wrapper {
+  overflow: hidden;
   height: 100%; }
+  .main-wrapper .category-slide {
+    position: relative;
+    z-index: 100; }
   @media screen and (max-width: 992px) {
     .main-wrapper {
       border-radius: 0; }
@@ -388,6 +415,7 @@ html, body {
         border: 1px solid #646464; } }
 
 .article-wrapper {
+  cursor: pointer;
   position: absolute;
   box-sizing: border-box;
   width: 100%;
@@ -410,9 +438,9 @@ html, body {
       .article-wrapper.active .article:before, .article-wrapper.active .article:after {
         display: none; }
   .article-wrapper.cover {
-    height: 90%; }
+    height: 100%; }
     .article-wrapper.cover .article {
-      height: 90%;
+      height: 95%;
       background-image: url(/static/img/fish.jpg);
       background-size: cover;
       background-repeat: no-repeat;
@@ -448,6 +476,8 @@ html, body {
     transition: all;
     min-height: 80%;
     box-sizing: border-box; }
+    .articles .article p {
+      line-height: 1.6; }
     .articles .article h1 {
       margin: -0.2rem auto 0.5rem;
       font-size: 1.4rem;
@@ -466,3 +496,18 @@ html, body {
       border-radius: 3px; }
   .articles ul {
     display: none; }
+
+#article-canvas {
+  height: 100%;
+  width: 100%; }
+
+.wrapper-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0.2;
+  height: 100%; }
+  @media screen and (max-width: 768px) {
+    .wrapper-bg {
+      display: none; } }

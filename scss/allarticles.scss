@@ -9,6 +9,10 @@
 @import "./widget/container";
 
 
+html {
+    height: auto;
+}
+
 body {
     @include clearfix;
 }
@@ -33,3 +37,7 @@ body {
     }
 }
 
+
+footer {
+    margin-top: 1.5rem;
+}

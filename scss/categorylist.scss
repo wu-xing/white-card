@@ -5,6 +5,10 @@
 @import "./widget/footer";
 @import "./widget/container";
 
+html {
+    height: auto;
+}
+
 body {
     @include clearfix;
 
@@ -28,7 +32,6 @@ body {
 }
 
 
-
 $number-size: 1.2rem;
 ul.categorys {
     list-style: none;
@@ -47,6 +50,12 @@ ul.categorys {
         @media screen and (max-width: $media-sm) {
             margin: 1rem 1%;    
         }
+
+        &:hover {
+            span.number {
+                transform: scale(1.31, 1.31);
+            }
+        }
         
         a {
             display: block;
@@ -64,6 +73,8 @@ ul.categorys {
             text-align: center;
             line-height: $number-size;
             margin-left: 0.3rem;
+            transition: transform 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
+
         }
     }
 }

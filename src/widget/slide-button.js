@@ -1,6 +1,22 @@
 'use strict';
 
+let winWidth = window.innerWidth,
+    enable = false;
+
+let checkAnable = () => {
+    if( winWidth < 768 ){
+        enable = true;
+    }
+};
+
+
+window.addEventListener('resize', () => {
+    winWidth = window.innerWidth;
+    checkAnable();
+});
+
 let main = () => {
+
     let halfWidth = window.innerWidth / 2;
     
     let getWidth = () => {
@@ -11,14 +27,20 @@ let main = () => {
     
     window.addEventListener('resize', getWidth);
 
-    slideTags.classList.add('hide');
+    if( enable ){
+        slideTags.classList.add('hide');
+    }
 
     let isLeft = true;
 
     var hideToggleButtonIdle;
 
     let handleClick =  (e) => {
-        
+
+        if( !enable ){
+            return;
+        }
+
         let x = e.changedTouches[0].clientX;
         
         slideTags.classList.remove('hide');
@@ -101,6 +123,10 @@ let main = () => {
     let isToggle = false;
     toggleButton.addEventListener('click', (event) => {
 
+        if( !enable ){
+            return;
+        }
+        
         if( isToggle ){
             return toggleHide();
         }
@@ -128,6 +154,9 @@ let main = () => {
 
     window.document.body.addEventListener('touchstart', (e) => {
 
+        if( !enable ){
+            return;
+        }
 
         if( Array.from(e.target.classList).indexOf('slide-button') >= 0 ||
             Array.from(e.target.parentElement.classList).indexOf('slide-button') >= 0 ){

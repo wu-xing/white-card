@@ -162,7 +162,9 @@ a {
   padding: 0;
   margin: 0;
   position: relative;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
   .article-list:before, .article-list:after {
     content: " ";
     display: table; }
@@ -175,7 +177,6 @@ a {
     background-color: white;
     width: 23%;
     height: 18rem;
-    float: left;
     overflow: hidden;
     border-radius: 7px;
     box-sizing: border-box;
@@ -223,8 +224,8 @@ a {
       height: auto; } }
   @media screen and (max-width: 400px) {
     .article-list li {
-      margin: 5%;
-      width: 90%;
+      margin: 5% auto;
+      width: 99%;
       height: auto; } }
 
 .paging {
@@ -367,6 +368,9 @@ body {
       background: none;
       box-shadow: none; } }
 
+html {
+  height: auto; }
+
 body:before, body:after {
   content: " ";
   display: table; }
@@ -389,3 +393,6 @@ body:after {
   .main-wrapper h1 {
     color: white;
     text-shadow: 0 0 1px white; }
+
+footer {
+  margin-top: 1.5rem; }

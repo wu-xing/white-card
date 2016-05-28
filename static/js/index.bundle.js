@@ -49,6 +49,8 @@
 	//require('./radiation-header.js');
 
 	__webpack_require__(1);
+	__webpack_require__(6);
+	__webpack_require__(7);
 
 	var $ = __webpack_require__(5);
 
@@ -11205,6 +11207,185 @@
 	return jQuery;
 	}));
 
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var winWidth = window.innerWidth,
+	    enable = false;
+
+	var checkAnable = function checkAnable() {
+	    if (winWidth < 768) {
+	        enable = true;
+	    }
+	};
+
+	window.addEventListener('resize', function () {
+	    winWidth = window.innerWidth;
+	    checkAnable();
+	});
+
+	var main = function main() {
+
+	    var halfWidth = window.innerWidth / 2;
+
+	    var getWidth = function getWidth() {
+	        halfWidth = window.innerWidth / 2;
+	    };
+
+	    var slideTags = document.querySelector('.slide-tag');
+
+	    window.addEventListener('resize', getWidth);
+
+	    if (enable) {
+	        slideTags.classList.add('hide');
+	    }
+
+	    var isLeft = true;
+
+	    var hideToggleButtonIdle;
+
+	    var handleClick = function handleClick(e) {
+
+	        if (!enable) {
+	            return;
+	        }
+
+	        var x = e.changedTouches[0].clientX;
+
+	        slideTags.classList.remove('hide');
+
+	        if (x < halfWidth) {
+	            slideTags.classList.remove('right');
+	            slideTags.classList.add('left');
+
+	            if (!isLeft) {
+	                disableButtons();
+	            }
+
+	            isLeft = true;
+	        } else {
+	            slideTags.classList.remove('left');
+	            slideTags.classList.add('right');
+
+	            if (isLeft) {
+	                disableButtons();
+	            }
+
+	            isLeft = false;
+	        }
+
+	        if (hideToggleButtonIdle) {
+	            clearTimeout(hideToggleButtonIdle);
+	            hideToggleButtonIdle = null;
+	        }
+
+	        hideToggleButtonIdle = setTimeout(function () {
+
+	            slideTags.classList.add('hide');
+	        }, 2000);
+	    };
+
+	    window.document.body.addEventListener('touchstart', handleClick);
+
+	    var lis = slideTags.querySelectorAll('ul li');
+	    lis = Array.prototype.slice.apply(lis);
+
+	    var len = lis.length;
+
+	    var angleUnit = 90 / (len - 1);
+
+	    var deg = Math.PI / 180;
+
+	    var base = 7;
+
+	    var toggleButton = slideTags.querySelector('.toggle-button');
+
+	    function enableButtons() {
+	        lis.forEach(function (e) {
+	            e.style.display = 'block';
+	        });
+	    }
+
+	    function disableButtons() {
+	        lis.forEach(function (e) {
+	            e.style.display = 'none';
+	        });
+	    }
+
+	    function hideToggleButton() {
+	        toggleButton.classList.add('hide');
+	    }
+
+	    function showToggleButton() {
+	        toggleButton.classList.remove('hide');
+	    }
+
+	    function toggleHide() {
+	        lis.forEach(function (e, i) {
+	            e.classList.remove('active');
+	            e.style.transform = '';
+	        });
+	        isToggle = false;
+	    }
+
+	    var isToggle = false;
+	    toggleButton.addEventListener('click', function (event) {
+
+	        if (!enable) {
+	            return;
+	        }
+
+	        if (isToggle) {
+	            return toggleHide();
+	        }
+
+	        enableButtons();
+	        isToggle = true;
+	        lis.forEach(function (e, i) {
+	            var angle = i * angleUnit * deg;
+
+	            var x = (base * Math.cos(angle) * (isLeft ? 1 : -1)).toFixed(6),
+	                y = (-base * Math.sin(angle)).toFixed(6);
+
+	            var translateStr = 'translate3d(' + x + 'rem, ' + y + 'rem, 0)';
+
+	            e.classList.add('active');
+
+	            setTimeout(function () {
+	                e.style.transform = translateStr;
+	            });
+	        });
+	    });
+
+	    window.document.body.addEventListener('touchstart', function (e) {
+
+	        if (!enable) {
+	            return;
+	        }
+
+	        if (Array.from(e.target.classList).indexOf('slide-button') >= 0 || Array.from(e.target.parentElement.classList).indexOf('slide-button') >= 0) {
+	            return;
+	        }
+
+	        isToggle && toggleHide();
+	    });
+	};
+
+	main();
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	window.addEventListener('scroll', function (e) {
+	    console.log(e);
+	});
 
 /***/ }
 /******/ ]);

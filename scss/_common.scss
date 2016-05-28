@@ -5,6 +5,9 @@
 html {
     background-color: #3B3E43;
     height: 100%;
+    background: {
+        image: url(/static/img/body-navy.jpg);
+    }
 }
 
 a, button, input, textarea{
@@ -16,9 +19,9 @@ body {
     @include clearfix;
     @include hide-scroll-bar;
     position: relative;
-    background: {
-        image: url(/static/img/body-navy.jpg);
-    }
+    /* background: { */
+    /*     image: url(/static/img/body-navy.jpg); */
+    /* } */
     box-sizing: border-box;
 }
 
